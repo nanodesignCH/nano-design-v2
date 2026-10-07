@@ -270,20 +270,6 @@ export function NanoPage() {
           <p className={`${s.display} ${s.infoEst}`}>scroll</p>
         </div>
 
-        <Divisor h="100px" l="var(--color-ink)" r="var(--color-ink)" kl={0.1} kr={0.05} />
-
-        <section className={s.imageSection} aria-label="projekt-showcase">
-          <div className={s.imageFrame}>
-            <Image
-              src="/nano/projects/hundephysio-seeland-desktop.png"
-              alt="Startseite hundephysio seeland (Desktop)"
-              fill
-              sizes="(max-width: 809px) 100vw, calc(100vw - 30px)"
-              className="object-cover object-top"
-            />
-          </div>
-        </section>
-
         <Divisor h="150px" hm="100px" l="var(--color-ink)" r="var(--color-ink)" kl={-0.03} />
 
         {/* Leistungen */}

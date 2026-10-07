@@ -458,21 +458,6 @@
   background: var(--c);
 }
 
-/* ───────────── Showcase ───────────── */
-
-.imageSection {
-  position: relative;
-  z-index: 0;
-  height: 900px;
-  padding: 0 15px;
-}
-
-.imageFrame {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 /* ───────────── Leistungen ───────────── */
 
 .vision {
@@ -1116,13 +1101,13 @@
 }
 
 @media (prefers-reduced-motion: no-preference) and (min-width: 1200px) {
-  /* zero offset when #leistungen reaches the viewport top (hero 100dvh + divisor + showcase + divisor) */
+  /* zero offset when #leistungen reaches the viewport top (hero 100dvh + 150px divisor) */
   .visionCol:first-child {
-    translate: 0 calc((var(--sy, 0) * 1px - 100dvh - 1150px) * -0.1);
+    translate: 0 calc((var(--sy, 0) * 1px - 100dvh - 150px) * -0.1);
   }
 
   .visionCol:last-child {
-    translate: 0 calc((var(--sy, 0) * 1px - 100dvh - 1150px) * -0.06);
+    translate: 0 calc((var(--sy, 0) * 1px - 100dvh - 150px) * -0.06);
   }
 }
 
@@ -1148,10 +1133,6 @@
 
   .info {
     top: 223px;
-  }
-
-  .imageSection {
-    height: 538px;
   }
 
   .sectionTitle {
@@ -1255,10 +1236,6 @@
 
   .divisorHalf {
     height: var(--hm, var(--h));
-  }
-
-  .imageSection {
-    height: 650px;
   }
 
   .sectionTitle {
