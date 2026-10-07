@@ -37,8 +37,8 @@ export async function POST(req: Request) {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: process.env.CONTACT_FROM ?? "nano design <onboarding@resend.dev>",
-      to: [process.env.CONTACT_TO ?? "info@nano-design.ch"],
+      from: process.env.CONTACT_FROM || "nano design <onboarding@resend.dev>",
+      to: [process.env.CONTACT_TO || "info@nano-design.ch"],
       reply_to: email,
       subject: `Kontaktanfrage von ${name}`,
       text: `Name: ${name}\nE-Mail: ${email}\nTelefon: ${telefon || "–"}\n\n${message}`,
