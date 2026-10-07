@@ -717,7 +717,7 @@
 
 .cardImage {
   position: relative;
-  height: 300px;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   background: var(--color-paper-warm);
 }
@@ -758,25 +758,22 @@
 
 .explore {
   position: absolute;
-  top: -130px;
-  left: 13px;
+  inset: 0;
   z-index: 2;
-  font-size: 92px;
+  display: grid;
+  place-items: center;
+  font-size: 48px;
   line-height: 1;
-  color: #fff;
-  white-space: nowrap;
-  mix-blend-mode: difference;
+  background: var(--color-ochre-muted);
+  color: var(--color-ink);
   opacity: 0;
   pointer-events: none;
-  transition:
-    opacity 0.35s,
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.35s;
 }
 
 .cardLink:hover .explore,
 .cardLink:focus-visible .explore {
   opacity: 1;
-  transform: translateY(120px);
 }
 
 /* ───────────── Über Nano ───────────── */
@@ -1418,12 +1415,8 @@
     width: 308px;
   }
 
-  .cardImage {
-    height: 240px;
-  }
-
   .explore {
-    font-size: 64px;
+    font-size: 40px;
   }
 
   .nn {

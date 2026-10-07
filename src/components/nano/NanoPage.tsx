@@ -189,13 +189,17 @@ const CARD_TILT = ["1deg", "0deg", "-1deg"];
 const CARD_K = [0, -0.02, -0.01];
 
 function ProjectCard({ p, i }: { p: Project; i: number }) {
-  // portrait (mobile) screenshot reads best in the polaroid; fall back to the 3:2 one
-  const image = p.images.find((src) => src.endsWith("-mobile.png")) ?? p.images[0];
+  const image = p.images.find((src) => src.endsWith("_prtscr.png")) ?? p.images[0];
   const meta = [p.category, p.tech && `cms: ${p.tech.toLowerCase()}`].filter(Boolean).join(" · ");
   const body = (
     <>
       <div className={s.cardImage}>
-        <Image src={image} alt={`Startseite ${p.name}`} fill sizes="(max-width: 809px) 302px, 400px" className="object-cover object-top" />
+        <Image src={image} alt={`Startseite ${p.name}`} fill sizes="(max-width: 809px) 302px, 400px" className="object-cover" />
+        {p.url && (
+          <span className={`${s.display} ${s.explore}`} aria-hidden>
+            ansehen ↗
+          </span>
+        )}
       </div>
       <div className={s.cardFoot}>
         <h3 className={`${s.display} ${s.cardName}`}>{p.name}</h3>
@@ -211,9 +215,6 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
     <div className={`${s.cardSlot} ${s.px}`} style={{ "--k": CARD_K[i % 3] } as Vars}>
       {p.url ? (
         <a href={p.url} target="_blank" rel="noopener noreferrer" className={`${s.card} ${s.cardLink}`} style={style}>
-          <span className={`${s.display} ${s.explore}`} aria-hidden>
-            ansehen ↗
-          </span>
           {body}
         </a>
       ) : (
