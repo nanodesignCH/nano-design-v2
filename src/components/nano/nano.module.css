@@ -764,9 +764,11 @@
 .explore {
   position: absolute;
   top: 6%;
-  left: 4%;
+  right: 0;
+  left: 0;
   z-index: 2;
-  font-size: 84px;
+  font-size: 76px;
+  text-align: center;
   line-height: 0.8;
   white-space: nowrap;
   color: rgb(201 168 76 / 0.85); /* ochre, 15% transparent */
@@ -1454,7 +1456,7 @@
   }
 
   .explore {
-    font-size: 64px;
+    font-size: 58px;
   }
 
   .nn {
