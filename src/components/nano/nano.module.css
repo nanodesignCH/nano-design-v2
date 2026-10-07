@@ -760,15 +760,12 @@
   text-transform: lowercase;
 }
 
-/* "└→ ansehen" as on the reference project cards: big display type across the top of the image */
+/* "ansehen ↗" as on the reference project cards: big display type across the top of the image */
 .explore {
   position: absolute;
   top: 6%;
   left: 4%;
   z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  gap: 0.08em;
   font-size: 84px;
   line-height: 0.8;
   white-space: nowrap;
@@ -781,16 +778,20 @@
     translate 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.exploreArrow {
-  width: 0.62em;
-  height: 0.5em;
-  margin-bottom: 0.06em;
-}
-
 .cardLink:hover .explore,
 .cardLink:focus-visible .explore {
   opacity: 1;
   translate: 0 0;
+}
+
+/* darken the screenshot so the ochre type keeps its contrast */
+.cardImage img {
+  transition: filter 0.35s;
+}
+
+.cardLink:hover .cardImage img,
+.cardLink:focus-visible .cardImage img {
+  filter: brightness(0.55);
 }
 
 /* ───────────── Über Nano ───────────── */
