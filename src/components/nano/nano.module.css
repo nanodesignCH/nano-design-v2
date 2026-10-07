@@ -1297,6 +1297,7 @@
     font-size: 13.5vw;
   }
 
+  /* calm block: tagline on the left axis, CTA across the full width */
   .heroFoot {
     flex-direction: column;
     align-items: stretch;
@@ -1304,7 +1305,7 @@
   }
 
   .heroCta {
-    align-self: flex-end;
+    text-align: center;
   }
 
   .scrollHint {
