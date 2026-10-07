@@ -69,3 +69,12 @@ T19: User importiert das Repo in Vercel (Git-Integration) → Preview-URL; Resen
 - [x] T18 Lighthouse lokal 98/100/100/100, Code-Review (2 Fixes), npm audit prod 0, AgentShield ausgewertet
 - Hinweis: `npm audit fix --omit=dev` entfernt devDependencies aus node_modules → danach `npm install`.
 - Abweichung vom Plan: T5–T12/T14 als ein Commit (`650d757`) statt einzeln, weil die Sektionen eine gemeinsame CSS-Datei teilen.
+
+## Nachträge nach Phase 5 (2026-10-07)
+
+- Showcase-Sektion unter dem Hero gestrichen (User-Entscheid), shadcn-CSS-Import entfernt (Build-Error-Fix)
+- Über nano: Ocker-Wechsel nach 2/3 des gepinnten Scrolls, „das wirkt.“ in Barlow Black
+- Hero: Titel linksbündig, Ortszeile/„scroll“-Text entfernt, Fusszeile (Tagline links, CTA rechts mit Ocker-Hover), Scroll-Hinweis unten mittig
+- Projekte: Thumbnails `*_prtscr.png` (3:2), Overlay „ansehen ↗“ deckend ochre-muted über dem Bild (Mobile: Verhalten unverändert, kein Balken)
+- Preise: Zeilen-Highlight in Ocker bei Hover/Tap
+- Lighthouse mobile lokal danach: 97 / 100 / 100 / 100
