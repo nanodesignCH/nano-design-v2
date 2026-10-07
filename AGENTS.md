@@ -8,63 +8,33 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
-# Website Reverse-Engineer Template
+# nano design
 
-## What This Is
-A reusable template for reverse-engineering any website into a clean, modern Next.js codebase using AI coding agents. The Next.js + shadcn/ui + Tailwind v4 base is pre-scaffolded — just run `/clone-website <url1> [<url2> ...]`.
+One-Pager für nano-design.ch (nano web & print design, Orpund). Gehostet auf Vercel.
 
 ## Tech Stack
-- **Framework:** Next.js 16 (App Router, React 19, TypeScript strict)
-- **UI:** shadcn/ui (Base UI primitives, Tailwind CSS v4, `cn()` utility)
-- **Icons:** Lucide React (default — will be replaced/supplemented by extracted SVGs)
-- **Styling:** Tailwind CSS v4 with oklch design tokens
-- **Deployment:** Vercel
+- Next.js 16 (App Router, React 19, TypeScript strict), Tailwind CSS v4 (oklch-Tokens in `src/app/globals.css`)
+- Barlow via `next/font`, Lenis für Smooth Scroll
+- Kontaktformular: Route Handler `src/app/api/contact/route.ts` → Resend (REST)
 
 ## Commands
-- `npm run dev` — Start dev server
-- `npm run build` — Production build
-- `npm run lint` — ESLint check
-- `npm run typecheck` — TypeScript check
-- `npm run check` — Run lint + typecheck + build
+- `npm run dev` — Dev-Server
+- `npm run check` — Lint + Typecheck + Build
+- `node --no-warnings scripts/check-contact.mts` — Prüfung der Formular-Validierung
 
-## Code Style
-- TypeScript strict mode, no `any`
-- Named exports, PascalCase components, camelCase utils
-- Tailwind utilities or scoped CSS; avoid inline styles unless behavior needs dynamic values
-- 2-space indentation
-- Responsive: mobile-first
-
-## Design Principles
-- **Pixel-perfect emulation** — match the target's spacing, colors, typography exactly
-- **No personal aesthetic changes during emulation phase** — match 1:1 first, customize later
-- **Real content** — use actual text and assets from the target site, not placeholders
-- **Beauty-first** — every pixel matters
-
-## Project Structure
+## Struktur
 ```
-src/
-  app/              # Next.js routes
-  components/       # React components
-    ui/             # shadcn/ui primitives
-    sites/<site>/   # Source-specific components, including extracted SVGs
-  lib/
-    utils.ts        # cn() utility (shadcn)
-  types/            # TypeScript interfaces
-  hooks/            # Custom React hooks
-public/
-  sites/<site>/     # Source-specific images, fonts, video, and other assets
-docs/
-  research/<site>/  # Page brief, asset map, and inspection evidence
-  design-references/ # Screenshots and visual references
-scripts/            # Asset download scripts
-.agents/
-  skills/
-    clone-website/  # Canonical cross-agent cloning workflow
-.claude/
-  commands/
-    clone-website.md # Thin Claude Code invocation bridge
+src/app/                 Routen (/, /impressum, /datenschutz, api/contact), Meta, OG-Bild, sitemap, robots
+src/components/nano/     Seite (NanoPage), Header, ContactForm, Scroll-/Reveal-Logik, nano.module.css
+src/lib/contact.ts       Validierung des Formulars
+content/nano/            Inhalte (Texte, Projekte, Marke) – einzige Quelle für Texte
+public/nano/             Bilder und Screenshots
+docs/                    Plan, Fortschritt, Launch-Report
 ```
 
-## Agent Workflow
-- Edit `.agents/skills/clone-website/` for cloning-workflow changes. It is the canonical skill used by Codex, Cursor, and OpenCode.
-- Keep `.claude/commands/clone-website.md` as a thin Claude Code bridge to the canonical skill; do not duplicate the workflow there.
+## Regeln
+- Schweizer Rechtschreibung (immer „ss“, nie „ß“), Ansprache „du“
+- Texte nur aus `content/nano/`, keine erfundenen Inhalte
+- Breakpoints: Desktop ≥1200, Tablet 810–1199.98, Mobile <810
+- Bewegung immer hinter `prefers-reduced-motion: no-preference`
+- Env: `RESEND_API_KEY`, `CONTACT_FROM`, `CONTACT_TO` (siehe `.env.example`), nur in Vercel bzw. `.env.local`
