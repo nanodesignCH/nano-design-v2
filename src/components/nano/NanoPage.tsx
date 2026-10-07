@@ -27,9 +27,12 @@ const EMAIL = "info@nano-design.ch";
 const JSON_LD = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://nano-design.ch/#organization",
   name: "Nano Design",
   alternateName: "nano web & print design",
   url: "https://nano-design.ch",
+  image: "https://nano-design.ch/opengraph-image",
+  logo: "https://nano-design.ch/icon.svg",
   email: EMAIL,
   founder: { "@type": "Person", name: "Joël Gex" },
   address: {
@@ -37,10 +40,26 @@ const JSON_LD = {
     streetAddress: "Hauptstrasse 91",
     postalCode: "2552",
     addressLocality: "Orpund",
+    addressRegion: "BE",
     addressCountry: "CH",
   },
-  areaServed: "CH",
+  areaServed: [
+    { "@type": "City", name: "Biel/Bienne" },
+    { "@type": "AdministrativeArea", name: "Kanton Bern" },
+    { "@type": "Country", name: "Schweiz" },
+  ],
+  currenciesAccepted: "CHF",
+  priceRange: "ab CHF 250.–",
   knowsAbout: ["Webdesign", "Logodesign", "Print Design", "Online-Shops", "Content Creation", "AI Design"],
+  // prices from the "preise" section below
+  makesOffer: [
+    ["Website", 690],
+    ["Logo", 250],
+  ].map(([name, price]) => ({
+    "@type": "Offer",
+    itemOffered: { "@type": "Service", name },
+    priceSpecification: { "@type": "PriceSpecification", minPrice: price, priceCurrency: "CHF" },
+  })),
 };
 
 /* ───────────── Building blocks ───────────── */

@@ -1,5 +1,25 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
+
+/** Full og/twitter set: nested metadata is replaced, not merged, so partial fields would inherit the home page's. */
+export function legalMetadata(path: string, title: string, description: string): Metadata {
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "website",
+      locale: "de_CH",
+      siteName: "nano design",
+      url: path,
+      title,
+      description,
+      images: "/opengraph-image",
+    },
+    twitter: { card: "summary_large_image", title, description, images: "/opengraph-image" },
+  };
+}
 
 /** Shared shell for /impressum and /datenschutz (wording: content/nano/legal-draft.md). */
 export function LegalPage({ title, children }: { title: string; children: ReactNode }) {
