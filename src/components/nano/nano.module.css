@@ -936,8 +936,26 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 24px;
-  padding: 26px 0;
+  /* bleed the hover fill into the gutter while the text stays aligned */
+  margin-inline: -20px;
+  padding: 26px 20px;
   border-top: 1px solid rgb(8 8 8 / 0.12);
+  transition: background-color 0.3s;
+}
+
+.priceName {
+  transition: translate 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.priceRow:hover,
+.priceRow:active {
+  background: var(--color-ochre);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .priceRow:hover .priceName {
+    translate: 12px 0;
+  }
 }
 
 .priceRow:last-child {

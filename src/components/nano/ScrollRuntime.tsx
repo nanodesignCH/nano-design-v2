@@ -10,6 +10,13 @@ import "lenis/dist/lenis.css";
  * Reduced motion: no smoothing and no parallax (`--sy` stays 0).
  */
 export function ScrollRuntime() {
+  // iOS Safari only applies :active (price-row tap highlight) when a touch listener exists
+  useEffect(() => {
+    const noop = () => {};
+    document.addEventListener("touchstart", noop, { passive: true });
+    return () => document.removeEventListener("touchstart", noop);
+  }, []);
+
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
