@@ -338,6 +338,10 @@ export function NanoPage() {
 
         {/* Über Nano */}
         <section id="ueber-nano" className={s.nn} aria-labelledby="ueber-nano-title">
+          {/* switches the section to ochre once ~2/3 of the pinned scroll has passed */}
+          <Reveal className={s.nnTrigger} rootMargin="0px 0px -99% 0px">
+            {null}
+          </Reveal>
           <div className={s.nnSticky}>
             <h2 id="ueber-nano-title" className={`${s.display} ${s.nnTitle}`}>
               gutes design

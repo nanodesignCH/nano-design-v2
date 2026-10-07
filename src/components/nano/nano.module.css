@@ -760,6 +760,43 @@
   background: var(--color-ink);
 }
 
+.nnTrigger {
+  position: absolute;
+  /* 2/3 of the pinned range (section height minus sticky height) */
+  top: calc((1900px - min(100dvh, 900px)) * 2 / 3);
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  pointer-events: none;
+}
+
+.nn,
+.nn :is(.nnTitle, .titleLight, .nnText, .eyebrow, .ghost) {
+  transition:
+    background-color 0.6s ease,
+    color 0.6s ease;
+}
+
+.nn:has(.nnTrigger[data-on="true"]) {
+  background: var(--color-ochre);
+}
+
+.nn:has(.nnTrigger[data-on="true"]) :is(.nnTitle, .nnText) {
+  color: var(--color-ink);
+}
+
+.nn:has(.nnTrigger[data-on="true"]) .titleLight {
+  color: var(--color-paper);
+}
+
+.nn:has(.nnTrigger[data-on="true"]) .eyebrow {
+  color: rgb(8 8 8 / 0.7);
+}
+
+.nn:has(.nnTrigger[data-on="true"]) .ghost {
+  color: rgb(8 8 8 / 0.12);
+}
+
 .nnSticky {
   position: sticky;
   top: 0;
@@ -1371,6 +1408,10 @@
   .nnSticky {
     height: auto;
     padding: 120px 20px 40px;
+  }
+
+  .nnTrigger {
+    top: 66%;
   }
 
   .nnTitle {
