@@ -250,25 +250,20 @@ export function NanoPage() {
       <main id="main">
         {/* Home */}
         <section id="home" className={s.hero}>
-          <p className={`${s.text} ${s.tagline}`}>web · print · digital</p>
           <h1 className={`${s.display} ${s.heroTitle}`}>
             <span>nano</span>
             <span className={s.heroTitleLight}>design.</span>
           </h1>
-          <a href="#kontakt" className={`${s.button} ${s.heroCta}`}>
-            jetzt anfragen →
-          </a>
-        </section>
-
-        <div className={s.info} aria-hidden>
-          <p className={`${s.text} ${s.infoPlace}`}>
-            orpund
-            <br />
-            schweiz
+          <div className={s.heroFoot}>
+            <p className={`${s.text} ${s.tagline}`}>web · print · digital</p>
+            <a href="#kontakt" className={`${s.button} ${s.heroCta}`}>
+              jetzt anfragen →
+            </a>
+          </div>
+          <p className={s.scrollHint} aria-hidden>
+            scroll
           </p>
-          <p className={`${s.text} ${s.infoPlace} ${s.infoPlaceMobile}`}>orpund, schweiz</p>
-          <p className={`${s.display} ${s.infoEst}`}>scroll</p>
-        </div>
+        </section>
 
         <Divisor h="150px" hm="100px" l="var(--color-ink)" r="var(--color-ink)" kl={-0.03} />
 

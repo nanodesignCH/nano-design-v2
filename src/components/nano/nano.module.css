@@ -374,18 +374,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
   min-height: 100dvh;
-  padding: 18px 0 64px;
+  padding: 18px 20px 120px;
   overflow: hidden;
-  text-align: center;
-}
-
-.tagline {
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.3em;
-  color: rgb(255 255 255 / 0.7);
 }
 
 .heroTitle {
@@ -393,8 +384,10 @@
   font-size: 288px;
   line-height: 0.82;
   letter-spacing: -0.05em;
-  /* re-centres the ink: negative tracking leaves a trailing gap on each line */
-  padding-right: 0.05em;
+  /* optical left edge: Barlow Black's side bearing at this size */
+  margin-left: -0.04em;
+  /* room for the descender of "g" above the hairline */
+  padding-bottom: 0.2em;
 }
 
 .heroTitle span {
@@ -407,41 +400,76 @@
   color: rgb(255 255 255 / 0.88);
 }
 
-.heroCta {
-  margin-top: 40px;
-}
-
-.info {
-  position: absolute;
-  top: calc(50dvh - 87px);
-  left: 14px;
-  right: 14px;
-  z-index: 1;
+.heroFoot {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  pointer-events: none;
+  gap: 24px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgb(255 255 255 / 0.15);
 }
 
-.infoPlace {
+.tagline {
   font-size: 14px;
-  line-height: 18px;
-  letter-spacing: 0.14em;
-  color: rgb(255 255 255 / 0.7);
-  text-align: left;
-}
-
-.infoPlaceMobile {
-  display: none;
-}
-
-.infoEst {
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 400;
-  letter-spacing: 0.25em;
+  line-height: 20px;
+  letter-spacing: 0.3em;
   color: var(--color-ochre);
-  writing-mode: vertical-rl;
+}
+
+.heroCta:hover {
+  border-color: var(--color-ochre);
+  background: var(--color-ochre);
+  color: var(--color-ink);
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 11.2px;
+  letter-spacing: 0.25em;
+  /* trailing tracking would shift the word off-centre */
+  padding-left: 0.25em;
+  color: var(--color-ochre);
+}
+
+.scrollHint::after {
+  content: "";
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(var(--color-ochre), transparent);
+  transform-origin: top;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scrollHint::after {
+    animation: scroll-hint 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+}
+
+@keyframes scroll-hint {
+  0% {
+    scale: 1 0;
+    transform-origin: top;
+  }
+  45% {
+    scale: 1 1;
+    transform-origin: top;
+  }
+  55% {
+    scale: 1 1;
+    transform-origin: bottom;
+  }
+  100% {
+    scale: 1 0;
+    transform-origin: bottom;
+  }
 }
 
 /* ───────────── Divisor (stepped edges) ───────────── */
@@ -1174,10 +1202,6 @@
     font-size: 220px;
   }
 
-  .info {
-    top: 223px;
-  }
-
   .sectionTitle {
     font-size: 104px;
   }
@@ -1247,34 +1271,30 @@
   }
 
   .hero {
-    padding-bottom: 96px;
-  }
-
-  .tagline {
-    margin-top: 60px;
+    padding-bottom: 100px;
   }
 
   .heroTitle {
     font-size: 30vw;
   }
 
-  .info {
-    top: 150px;
+  .heroFoot {
     flex-direction: column;
-    gap: 6px;
+    align-items: stretch;
+    gap: 20px;
   }
 
-  .infoPlace {
-    display: none;
+  .heroCta {
+    align-self: flex-end;
   }
 
-  .infoPlaceMobile {
-    display: block;
-    text-align: center;
+  .scrollHint {
+    bottom: 16px;
+    font-size: 10px;
   }
 
-  .infoEst {
-    writing-mode: horizontal-tb;
+  .scrollHint::after {
+    height: 28px;
   }
 
   .divisorHalf {
