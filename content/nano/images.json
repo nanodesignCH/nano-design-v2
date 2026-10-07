@@ -1,0 +1,194 @@
+[
+  {
+    "file": "/nano/hundephysio_prtscr.png",
+    "sourceUrl": "https://nano-design.ch/img/portfolio/hundephysio_prtscr.png",
+    "alt": "hundephysio seeland",
+    "section": "projekte",
+    "width": 600,
+    "height": 400
+  },
+  {
+    "file": "/nano/asevatec_prtscr.png",
+    "sourceUrl": "https://nano-design.ch/img/portfolio/asevatec_prtscr.png",
+    "alt": "asevatec gmbh",
+    "section": "projekte",
+    "width": 600,
+    "height": 400
+  },
+  {
+    "file": "/nano/hanny_prtscr.png",
+    "sourceUrl": "https://nano-design.ch/img/portfolio/hanny_prtscr.png",
+    "alt": "coiffure hanny",
+    "section": "projekte",
+    "width": 600,
+    "height": 400
+  },
+  {
+    "file": "/nano/megaro_prtscr.png",
+    "sourceUrl": "https://nano-design.ch/img/portfolio/megaro_prtscr.png",
+    "alt": "gesundheitspraxis megaro",
+    "section": "projekte",
+    "width": 600,
+    "height": 400
+  },
+  {
+    "file": "/nano/hirter_prtscr.png",
+    "sourceUrl": "https://nano-design.ch/img/portfolio/hirter_prtscr.png",
+    "alt": "hirter finance & accounting",
+    "section": "projekte",
+    "width": 600,
+    "height": 400
+  },
+  {
+    "file": "/nano/furer_prtscr.png",
+    "sourceUrl": "https://nano-design.ch/img/portfolio/furer_prtscr.png",
+    "alt": "atelier furer",
+    "section": "projekte",
+    "width": 600,
+    "height": 400
+  },
+  {
+    "file": "/nano/wigglepaws_prtscr.png",
+    "sourceUrl": "https://nano-design.ch/img/portfolio/wigglepaws_prtscr.png",
+    "alt": "wigglepaws online store",
+    "section": "projekte",
+    "width": 600,
+    "height": 400
+  },
+  {
+    "file": "/nano/hirterbau_prtscr.png",
+    "sourceUrl": "https://nano-design.ch/img/portfolio/hirterbau_prtscr.png",
+    "alt": "a. hirt bau ag",
+    "section": "projekte",
+    "width": 600,
+    "height": 400
+  },
+  {
+    "file": "/nano/icon.svg",
+    "sourceUrl": "https://nano-design.ch/icon.svg",
+    "alt": "nd",
+    "section": "favicon/logo",
+    "width": 32,
+    "height": 32
+  },
+  {
+    "file": "/nano/projects/hundephysio-seeland-desktop.png",
+    "sourceUrl": "https://www.hundephysio-seeland.ch/",
+    "alt": "Startseite hundephysio seeland (Desktop)",
+    "section": "projekte/leistungen/showcase",
+    "width": 2880,
+    "height": 1800,
+    "captured": "2026-10-06",
+    "viewport": "1440x900@2x"
+  },
+  {
+    "file": "/nano/projects/hundephysio-seeland-mobile.png",
+    "sourceUrl": "https://www.hundephysio-seeland.ch/",
+    "alt": "Startseite hundephysio seeland (Mobile)",
+    "section": "projekte/leistungen",
+    "width": 780,
+    "height": 1688,
+    "captured": "2026-10-06",
+    "viewport": "390x844@2x"
+  },
+  {
+    "file": "/nano/projects/asevatec-desktop.png",
+    "sourceUrl": "https://asevatec.ch/",
+    "alt": "Startseite asevatec gmbh (Desktop)",
+    "section": "projekte/leistungen/showcase",
+    "width": 2880,
+    "height": 1800,
+    "captured": "2026-10-06",
+    "viewport": "1440x900@2x"
+  },
+  {
+    "file": "/nano/projects/asevatec-mobile.png",
+    "sourceUrl": "https://asevatec.ch/",
+    "alt": "Startseite asevatec gmbh (Mobile)",
+    "section": "projekte/leistungen",
+    "width": 780,
+    "height": 1688,
+    "captured": "2026-10-06",
+    "viewport": "390x844@2x"
+  },
+  {
+    "file": "/nano/projects/coiffure-hanny-desktop.png",
+    "sourceUrl": "https://coiffure-hanny.ch/",
+    "alt": "Startseite coiffure hanny (Desktop)",
+    "section": "projekte/leistungen/showcase",
+    "width": 2880,
+    "height": 1800,
+    "captured": "2026-10-06",
+    "viewport": "1440x900@2x"
+  },
+  {
+    "file": "/nano/projects/coiffure-hanny-mobile.png",
+    "sourceUrl": "https://coiffure-hanny.ch/",
+    "alt": "Startseite coiffure hanny (Mobile)",
+    "section": "projekte/leistungen",
+    "width": 780,
+    "height": 1688,
+    "captured": "2026-10-06",
+    "viewport": "390x844@2x"
+  },
+  {
+    "file": "/nano/projects/gesundheitspraxis-megaro-desktop.png",
+    "sourceUrl": "https://www.gesundheitspraxis-megaro.ch/",
+    "alt": "Startseite gesundheitspraxis megaro (Desktop)",
+    "section": "projekte/leistungen/showcase",
+    "width": 2880,
+    "height": 1800,
+    "captured": "2026-10-06",
+    "viewport": "1440x900@2x"
+  },
+  {
+    "file": "/nano/projects/gesundheitspraxis-megaro-mobile.png",
+    "sourceUrl": "https://www.gesundheitspraxis-megaro.ch/",
+    "alt": "Startseite gesundheitspraxis megaro (Mobile)",
+    "section": "projekte/leistungen",
+    "width": 780,
+    "height": 1688,
+    "captured": "2026-10-06",
+    "viewport": "390x844@2x"
+  },
+  {
+    "file": "/nano/projects/atelier-furer-desktop.png",
+    "sourceUrl": "https://www.atelier-furer.ch/",
+    "alt": "Startseite atelier furer (Desktop)",
+    "section": "projekte/leistungen/showcase",
+    "width": 2880,
+    "height": 1800,
+    "captured": "2026-10-06",
+    "viewport": "1440x900@2x"
+  },
+  {
+    "file": "/nano/projects/atelier-furer-mobile.png",
+    "sourceUrl": "https://www.atelier-furer.ch/",
+    "alt": "Startseite atelier furer (Mobile)",
+    "section": "projekte/leistungen",
+    "width": 780,
+    "height": 1688,
+    "captured": "2026-10-06",
+    "viewport": "390x844@2x"
+  },
+  {
+    "file": "/nano/projects/a-hirt-bau-desktop.png",
+    "sourceUrl": "https://www.ahirt-bau.ch/",
+    "alt": "Startseite a. hirt bau ag (Desktop)",
+    "section": "projekte/leistungen/showcase",
+    "width": 2880,
+    "height": 1800,
+    "captured": "2026-10-06",
+    "viewport": "1440x900@2x"
+  },
+  {
+    "file": "/nano/projects/a-hirt-bau-mobile.png",
+    "sourceUrl": "https://www.ahirt-bau.ch/",
+    "alt": "Startseite a. hirt bau ag (Mobile)",
+    "section": "projekte/leistungen",
+    "width": 780,
+    "height": 1688,
+    "captured": "2026-10-06",
+    "viewport": "390x844@2x"
+  }
+]

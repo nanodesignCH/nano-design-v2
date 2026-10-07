@@ -1,0 +1,54 @@
+{
+  "source": "https://nano-design.ch/ (getComputedStyle + :root custom properties, 2026-10-06)",
+  "colors": [
+    { "token": "--color-ink", "hex": "#080808", "oklch": "oklch(0.1344 0 0)", "usage": "Body-, Hero-, Projekt- und Footer-Hintergrund; Text auf hellen Flächen (Leistungs-Karten, Preise, Kontakt); Button-Rahmen auf Hell", "frequency": { "text": 23, "background": 6, "border": 2 } },
+    { "token": "--color-ink-soft", "hex": "#141414", "oklch": "oklch(0.1913 0 0)", "usage": "Hintergrund Leistungen und Projekt-Panels", "frequency": { "background": 9 } },
+    { "token": "--color-white", "hex": "#ffffff", "oklch": "oklch(1 0 0)", "usage": "Headlines und Navigation auf Dunkel; Preise-Hintergrund; Alpha-Stufen 0.88/0.85/0.7/0.5/0.45/0.4/0.35/0.25/0.15/0.06 für Fliesstext, Links, Rahmen", "frequency": { "text": 20, "textAlpha": 36, "background": 1, "borderAlpha": 6 } },
+    { "token": "--color-paper", "hex": "#f5f0eb", "oklch": "oklch(0.9576 0.0086 67.7)", "usage": "Hintergrund Kontakt, Leistungs-Karten", "frequency": { "background": 4 } },
+    { "token": "--color-paper-warm", "hex": "#ede8e1", "oklch": "oklch(0.9330 0.0108 76.6)", "usage": "Hintergrund Leistungs-Karten (alternierend)", "frequency": { "background": 3 } },
+    { "token": "--color-ochre", "hex": "#c9a84c", "oklch": "oklch(0.7432 0.1171 89.5)", "usage": "Akzent: Eyebrows („01 — leistungen“), Nummern (#01), Hero-Untertitel, Hinweise", "frequency": { "text": 23 } },
+    { "token": "--color-ochre-muted", "hex": "#a8893c", "oklch": "oklch(0.6438 0.1025 87.2)", "usage": "Hover-Farbe Logo, Fortschrittsbalken Projekte", "frequency": { "background": 1, "hover": "logo" } }
+  ],
+  "contrast": {
+    "ochre on ink": 8.76,
+    "ochre-muted on ink": 6.02,
+    "white on ink": 20.03,
+    "ink on paper": 17.69,
+    "ochre on paper": 2.02,
+    "ochre-muted on paper": 2.94,
+    "note": "Ochre erfüllt auf Dunkel WCAG AA, auf Paper nicht (nur dekorativ oder grosse Schrift ≥ 3:1 wird auch nicht erreicht)."
+  },
+  "fonts": [
+    {
+      "family": "Barlow",
+      "source": "Google Fonts via next/font (self-hosted woff2 unter /_next/static/media)",
+      "license": "SIL Open Font License 1.1",
+      "weights": [300, 400, 500, 700, 900],
+      "styles": ["normal", "italic (300, 900 geladen)"],
+      "usageCount": { "300": 65, "900": 37, "400": 34, "500": 1, "700": 1 }
+    }
+  ],
+  "typography": {
+    "case": "Fast alles lowercase per CSS; Formularlabels uppercase",
+    "h1Hero": { "size": "176px", "weight": 900, "lineHeight": "154.88px (0.88)", "letterSpacing": "-7.04px (-0.04em)" },
+    "heroSecondLine": { "size": "176px", "weight": 300, "lineHeight": "176px", "letterSpacing": "-1.76px", "color": "rgba(255,255,255,0.88)" },
+    "h2": { "size": "144px", "weight": 900, "lineHeight": "126.72px (0.88)", "letterSpacing": "-5.76px (-0.04em)" },
+    "h3Card": { "size": "72px", "weight": 900, "lineHeight": "72px", "letterSpacing": "-1.44px" },
+    "eyebrow": { "size": "11.2px", "weight": 400, "letterSpacing": "2.8px (0.25em)", "color": "#c9a84c" },
+    "body": { "size": "16px", "weight": 400, "lineHeight": "24px" },
+    "nav": { "size": "14px", "weight": 400, "letterSpacing": "1.68px", "color": "rgba(255,255,255,0.7)" },
+    "button": { "size": "12.8px", "weight": 400, "letterSpacing": "2.048px", "padding": "14px 32px", "border": "1px solid", "radius": "0" },
+    "formLabel": { "size": "10.88px", "letterSpacing": "1.96px", "transform": "uppercase", "color": "rgba(8,8,8,0.35)" },
+    "input": { "size": "16px", "weight": 300, "padding": "16px 0", "border": "nur Unterlinie" }
+  },
+  "logo": {
+    "type": "typografisch",
+    "text": "nd",
+    "spec": "Barlow 900, lowercase, font-size 1.6rem, letter-spacing -0.03em, line-height 1, weiss, Hover #a8893c",
+    "vector": "/nano/icon.svg (Favicon 32×32: #080808-Quadrat, „nd“ weiss, Arial 900, 17px, letter-spacing -0.8)",
+    "raster": null
+  },
+  "texture": "Hero: SVG-feTurbulence-Noise als Hintergrund (baseFrequency 0.9, numOctaves 4)",
+  "radius": "0 (eckig), Tailwind-Default --radius .625rem ungenutzt",
+  "shadows": "keine sichtbar"
+}

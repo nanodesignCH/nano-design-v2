@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "hundephysio-seeland",
+    "name": "hundephysio seeland",
+    "category": "web design",
+    "tech": null,
+    "url": "https://www.hundephysio-seeland.ch/",
+    "description": "vertrauensvoller webauftritt für eine hundephysiotherapie-praxis. im fokus stehen empathie und fachkompetenz: besucher finden behandlungsangebot, terminbuchung und einblicke in die praxis auf einen blick.",
+    "images": [
+      "/nano/projects/hundephysio-seeland-desktop.png",
+      "/nano/projects/hundephysio-seeland-mobile.png",
+      "/nano/hundephysio_prtscr.png"
+    ]
+  },
+  {
+    "slug": "asevatec",
+    "name": "asevatec gmbh",
+    "category": "web design",
+    "tech": "WordPress",
+    "url": "https://asevatec.ch/",
+    "description": "für einen selbständigen arbeitssicherheitsberater und höhenarbeiter wurde der komplette webauftritt unter asevatec.ch umgesetzt. die site bildet das dreiteilige angebot ab: beratung, schulungen und operative höhenarbeit. im vordergrund stand klarheit – die zielgruppe soll in wenigen sekunden verstehen, wer dahintersteht. cms: wordpress",
+    "images": [
+      "/nano/projects/asevatec-desktop.png",
+      "/nano/projects/asevatec-mobile.png",
+      "/nano/asevatec_prtscr.png"
+    ]
+  },
+  {
+    "slug": "coiffure-hanny",
+    "name": "coiffure hanny",
+    "category": "web design",
+    "tech": "WordPress",
+    "url": "https://coiffure-hanny.ch/",
+    "description": "relaunch der website von coiffure hanny in moosseedorf. der salon wird per 1. januar 2026 an patricia übergeben, die bereits über 14 jahre im team mitgewirkt hat. die neue seite stellt das team vor und schafft vertrauen in die nahtlose übergabe. cms: wordpress",
+    "images": [
+      "/nano/projects/coiffure-hanny-desktop.png",
+      "/nano/projects/coiffure-hanny-mobile.png",
+      "/nano/hanny_prtscr.png"
+    ]
+  },
+  {
+    "slug": "gesundheitspraxis-megaro",
+    "name": "gesundheitspraxis megaro",
+    "category": "web design",
+    "tech": "WordPress",
+    "url": "https://www.gesundheitspraxis-megaro.ch/",
+    "description": "neue online-präsenz für die gesundheitspraxis megaro in grenchen. inspiriert von den elementen des meeres verkörpert die website eine atmosphäre von leichtigkeit und gesundheit, mit einblicken in die spezialisierten dienstleistungen rund um atlaslogie. cms: wordpress",
+    "images": [
+      "/nano/projects/gesundheitspraxis-megaro-desktop.png",
+      "/nano/projects/gesundheitspraxis-megaro-mobile.png",
+      "/nano/megaro_prtscr.png"
+    ]
+  },
+  {
+    "slug": "hirter-finance",
+    "name": "hirter finance & accounting",
+    "category": "logo design",
+    "tech": null,
+    "url": null,
+    "linkLabel": "mehr auf anfrage",
+    "description": "logo für ein startup im bereich buchhaltung & finanzen. das edle, schlichte design vermittelt einen zeitlosen eindruck von kraft und wohlstand. das sternzeichen des firmeninhabers – stier – diente als zentrales gestaltungselement.",
+    "images": [
+      "/nano/hirter_prtscr.png"
+    ]
+  },
+  {
+    "slug": "atelier-furer",
+    "name": "atelier furer",
+    "category": "web design",
+    "tech": "WordPress",
+    "url": "https://www.atelier-furer.ch/",
+    "description": "infoseite für das lederhandwerk-atelier von michelle furer. ziel war, potenziellen kunden das angebot zusammengefasst vorzustellen – eine schlichte, zeitlose website, die das handwerk in den vordergrund stellt. cms: wordpress",
+    "images": [
+      "/nano/projects/atelier-furer-desktop.png",
+      "/nano/projects/atelier-furer-mobile.png",
+      "/nano/furer_prtscr.png"
+    ]
+  },
+  {
+    "slug": "wigglepaws",
+    "name": "wigglepaws online store",
+    "category": "online shop",
+    "tech": "Shopify",
+    "url": null,
+    "linkLabel": "mehr auf anfrage",
+    "description": "online-shop für einen schweizer kunden mit fokus auf hunde- und haustierbedarf. da der shop weltweit verkauft, wurde er komplett auf englisch umgesetzt. shopsystem: shopify",
+    "images": [
+      "/nano/wigglepaws_prtscr.png"
+    ]
+  },
+  {
+    "slug": "a-hirt-bau",
+    "name": "a. hirt bau ag",
+    "category": "web design",
+    "tech": "WordPress",
+    "url": "https://www.ahirt-bau.ch/",
+    "description": "relaunch der infoseite der alfred hirt bau ag in tüscherz-alfermée. anlässlich der übergabe an den neuen geschäftsführer wurde der online-auftritt komplett neu aufgebaut, mit erweiterbarem portfolio für künftige bauprojekte. cms: wordpress",
+    "images": [
+      "/nano/projects/a-hirt-bau-desktop.png",
+      "/nano/projects/a-hirt-bau-mobile.png",
+      "/nano/hirterbau_prtscr.png"
+    ]
+  }
+]
