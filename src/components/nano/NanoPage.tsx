@@ -216,7 +216,11 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
         <Image src={image} alt={`Startseite ${p.name}`} fill sizes="(max-width: 809px) 302px, 400px" className="object-cover" />
         {p.url && (
           <span className={`${s.display} ${s.explore}`} aria-hidden>
-            ansehen ↗
+            {/* thin "└→" hook arrow as on the reference card */}
+            <svg className={s.exploreArrow} viewBox="0 0 60 48" fill="none" stroke="currentColor" strokeWidth="5">
+              <path d="M5 0v38h48M40 25l13 13-13 13" />
+            </svg>
+            ansehen
           </span>
         )}
       </div>
