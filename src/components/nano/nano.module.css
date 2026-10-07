@@ -815,6 +815,12 @@
   text-align: center;
 }
 
+.nnTitle .titleLight {
+  font-weight: inherit;
+  letter-spacing: inherit;
+  opacity: 1;
+}
+
 .nnInfo {
   position: absolute;
   inset: 0;
