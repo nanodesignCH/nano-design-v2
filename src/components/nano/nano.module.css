@@ -379,11 +379,12 @@
   overflow: hidden;
 }
 
+/* sizes and tracking as on nano-design.ch: 176px at 1440, 13.5vw on mobile */
 .heroTitle {
   margin-top: auto;
-  font-size: 288px;
-  line-height: 0.82;
-  letter-spacing: -0.05em;
+  font-size: 176px;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
   /* optical left edge: Barlow Black's side bearing at this size */
   margin-left: -0.04em;
   /* room for the descender of "g" above the hairline */
@@ -395,8 +396,11 @@
 }
 
 .heroTitleLight {
+  font-family: var(--font-barlow-italic), var(--font-barlow-family), sans-serif;
   font-weight: 300;
-  letter-spacing: -0.03em;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.01em;
   color: rgb(255 255 255 / 0.88);
 }
 
@@ -1214,7 +1218,7 @@
 
 @media (min-width: 810px) and (max-width: 1199.98px) {
   .heroTitle {
-    font-size: 220px;
+    font-size: 14vw;
   }
 
   .sectionTitle {
@@ -1290,7 +1294,7 @@
   }
 
   .heroTitle {
-    font-size: 30vw;
+    font-size: 13.5vw;
   }
 
   .heroFoot {
@@ -1442,13 +1446,16 @@
     padding-bottom: 120px;
   }
 
+  /* no pinning on mobile: the body text would scroll underneath the title */
   .nnSticky {
+    position: relative;
     height: auto;
     padding: 120px 20px 40px;
   }
 
+  /* unpinned: switch while the body text is still on screen */
   .nnTrigger {
-    top: 66%;
+    top: 30%;
   }
 
   .nnTitle {

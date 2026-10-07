@@ -8,6 +8,14 @@ const barlow = Barlow({
   subsets: ["latin"],
 });
 
+// hero "design." only (as on nano-design.ch); separate instance keeps the other weights upright-only
+const barlowItalic = Barlow({
+  variable: "--font-barlow-italic",
+  weight: "300",
+  style: "italic",
+  subsets: ["latin"],
+});
+
 const title = "nano design – web & print design";
 const description =
   "Schweizer Design-Agentur für Webdesign, Logodesign, Print Design und Online-Shops. Nano Web & Print Design, Orpund.";
@@ -38,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de-CH" className={`${barlow.variable} antialiased`}>
+    <html lang="de-CH" className={`${barlow.variable} ${barlowItalic.variable} antialiased`}>
       <body>{children}</body>
     </html>
   );
