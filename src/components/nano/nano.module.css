@@ -1454,9 +1454,9 @@
     padding: 120px 20px 40px;
   }
 
-  /* unpinned: switch while the body text is still on screen */
+  /* unpinned: switch once the section fills the viewport (its top reaches the viewport top) */
   .nnTrigger {
-    top: calc(30% - 100px);
+    top: 0;
   }
 
   .nnTitle {
