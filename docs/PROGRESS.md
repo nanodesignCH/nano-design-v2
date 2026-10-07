@@ -9,7 +9,7 @@ Master-Prompt: `PROJECT_SETUP_PROMPT.md`. Nach einem Session-Neustart diese Date
 ## Entscheidungen
 
 - Node 24 via nvm (`nvm alias default 24`). Bash-Shells des Agents brauchen `source ~/.nvm/nvm.sh && nvm use 24`, weil der PATH dort noch v22 hat.
-- Git: vorerst nur lokal, kein Remote. Remote spätestens vor dem Vercel-Deploy klären.
+- Git: Remote `origin` = github.com/nanodesignCH/nano-design-v2 (öffentlich). **Arbeitsbranch `publish` → `origin/main`** (bereinigter Stand ohne Klon-Assets). `master` = lokales Archiv mit voller Klon-Historie, nie pushen. `docs/research/alovehatestory/` und `docs/clone-reference/` sind gitignored (nur lokal).
 - ECC: `npx ecc-universal setup` verlangt ein TTY, darum per CLI installiert (`ecc@ecc`, user scope, Hook-Profil `standard`).
 - context-mode: `context-mode@context-mode` (user scope).
 - taste-skills: global in `~/.claude/skills` vorhanden, nichts nachinstalliert.
@@ -56,7 +56,7 @@ Hinweis Dev-Server: `preview_start` startet den Prozess in dieser Umgebung nicht
 
 ## Nächster Schritt
 
-T19: Vercel-Login (User), Preview-Deploy, Resend-Key als Env, Test-Submit, Lighthouse auf Preview, dann Gate 3.
+T19: User importiert das Repo in Vercel (Git-Integration) → Preview-URL; Resend später (User). Danach Lighthouse auf Preview, Gate 3.
 
 ## Phase 5 (Block B)
 
