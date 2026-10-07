@@ -791,8 +791,8 @@
 
 .nnTrigger {
   position: absolute;
-  /* 2/3 of the pinned range (section height minus sticky height) */
-  top: calc((1900px - min(100dvh, 900px)) * 2 / 3);
+  /* 2/3 of the pinned range (section height minus sticky height), one wheel step (100px) earlier */
+  top: calc((1900px - min(100dvh, 900px)) * 2 / 3 - 100px);
   bottom: 0;
   left: 0;
   width: 1px;
@@ -1425,7 +1425,8 @@
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 61px;
-    padding: 60px 0 300px;
+    /* ~40% less gap to über nano (was 300px + 120px title padding) */
+    padding: 60px 0 130px;
   }
 
   .cardSlot {
@@ -1455,7 +1456,7 @@
 
   /* unpinned: switch while the body text is still on screen */
   .nnTrigger {
-    top: 30%;
+    top: calc(30% - 100px);
   }
 
   .nnTitle {
