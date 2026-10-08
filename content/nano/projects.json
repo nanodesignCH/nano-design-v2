@@ -1,5 +1,16 @@
 [
   {
+    "slug": "buereverein",
+    "name": "büreverein",
+    "category": "web design",
+    "tech": "WordPress",
+    "url": "https://buereverein.ch/",
+    "description": "neuer webauftritt für den büreverein, der seit 1953 menschen im stedtli büren an der aare zusammenbringt. die site stellt die acht ressorts von der brockenstube bis zum ferienplausch vor, zeigt alle anlässe auf einen blick und führt direkt zur mitgliedschaft. cms: wordpress",
+    "images": [
+      "/nano/buereverein_prtscr.webp"
+    ]
+  },
+  {
     "slug": "hundephysio-seeland",
     "name": "hundephysio seeland",
     "category": "web design",

@@ -208,7 +208,7 @@ const CARD_TILT = ["1deg", "0deg", "-1deg"];
 const CARD_K = [0, -0.02, -0.01];
 
 function ProjectCard({ p, i }: { p: Project; i: number }) {
-  const image = p.images.find((src) => src.endsWith("_prtscr.png")) ?? p.images[0];
+  const image = p.images.find((src) => src.includes("_prtscr.")) ?? p.images[0];
   const meta = [p.category, p.tech && `cms: ${p.tech.toLowerCase()}`].filter(Boolean).join(" · ");
   const body = (
     <>
@@ -329,19 +329,9 @@ export function NanoPage() {
         <section id="projekte" aria-labelledby="projekte-title">
           <div className={s.projHead}>
             <Eyebrow className={s.projHeadLatest}>02 — portfolio</Eyebrow>
-            <p className={`${s.text} ${s.projHeadTag} ${s.projHeadTagLeft}`}>
-              <span className={`${s.px} block`} style={{ "--k": 0.005 } as Vars}>
-                web design
-              </span>
-            </p>
             <h2 id="projekte-title" className={`${s.display} ${s.projHeadTitle} ${s.px}`} style={{ "--k": 0.01 } as Vars}>
               ausgewählte <span className={s.titleLight}>arbeiten.</span>
             </h2>
-            <p className={`${s.text} ${s.projHeadTag} ${s.projHeadTagRight}`}>
-              <span className={`${s.px} block`} style={{ "--k": 0.005 } as Vars}>
-                logo design
-              </span>
-            </p>
             <p className={`${s.text} ${s.projHeadYear}`}>ein auszug realisierter projekte.</p>
           </div>
           <div className={s.projects}>
