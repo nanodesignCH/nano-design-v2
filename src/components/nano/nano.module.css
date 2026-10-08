@@ -665,13 +665,13 @@
 
 .projHeadLatest {
   top: 196px;
-  left: 37px;
+  left: 14px;
   margin: 0;
 }
 
 .projHeadYear {
   top: 192px;
-  right: 37px;
+  right: 14px;
   color: rgb(255 255 255 / 0.5);
 }
 
@@ -680,11 +680,11 @@
   z-index: 8;
   display: grid;
   grid-template-columns: repeat(3, 406px);
-  /* outer columns 44px from the edge (tuned by eye between 39 and 52) */
-  justify-content: space-between;
+  /* as on the reference: fixed card width, fixed 64px gutter, block centred in the viewport */
+  justify-content: center;
   align-items: start;
-  row-gap: 110px;
-  padding: 100px 44px 140px;
+  gap: 110px 64px;
+  padding: 100px 0 140px;
   background: var(--color-ink);
 }
 
