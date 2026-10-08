@@ -679,19 +679,20 @@
   position: relative;
   z-index: 8;
   display: grid;
-  grid-template-columns: repeat(3, 406px);
-  /* as on the reference: fixed card width, fixed 64px gutter, block centred in the viewport */
+  /* as on the reference (block centred), gutter 64px + 50px per side; cards shrink below 406px
+     on narrower desktops so the outer columns keep a 60px margin */
+  grid-template-columns: repeat(3, minmax(0, 406px));
   justify-content: center;
   align-items: start;
-  gap: 110px 64px;
-  padding: 100px 0 140px;
+  gap: 110px 114px;
+  padding: 100px 60px 140px;
   background: var(--color-ink);
 }
 
 .card {
   position: relative;
   display: block;
-  width: 406px;
+  width: 100%;
   padding: 3px 3px 0;
   background: #fff;
   color: var(--color-ink);
