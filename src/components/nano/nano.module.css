@@ -680,10 +680,11 @@
   z-index: 8;
   display: grid;
   grid-template-columns: repeat(3, 406px);
-  justify-content: center;
+  /* outer columns sit 39px from the edge (25% further out than the centred 52px) */
+  justify-content: space-between;
   align-items: start;
-  gap: 110px 52px;
-  padding: 100px 37px 140px;
+  row-gap: 110px;
+  padding: 100px 39px 140px;
   background: var(--color-ink);
 }
 
