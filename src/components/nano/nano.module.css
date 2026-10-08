@@ -665,13 +665,13 @@
 
 .projHeadLatest {
   top: 196px;
-  left: 60px;
+  left: 37px;
   margin: 0;
 }
 
 .projHeadYear {
   top: 192px;
-  right: 60px;
+  right: 37px;
   color: rgb(255 255 255 / 0.5);
 }
 
@@ -682,8 +682,8 @@
   grid-template-columns: repeat(3, 406px);
   justify-content: center;
   align-items: start;
-  gap: 110px 48px;
-  padding: 100px 60px 140px;
+  gap: 110px 52px;
+  padding: 100px 37px 140px;
   background: var(--color-ink);
 }
 
