@@ -11,7 +11,7 @@
 | 7 | Leistungen: 6 vs. 3 Panels | Nano hat 6 Leistungen, der Klon 3 Sticky-Panels mit je 2 Listen. | 3 Panels gruppieren (Web: web design + online shops · Brand: logo + print · Content: content creation + ai design). |
 | 8 | Preise | „websites ab chf 690.–“, „logos ab chf 250.–“, „online shops auf anfrage“ sowie Hosting-/Monitoring-Text. Aktuell? | Bestätigen. |
 | 9 | Telefonnummer / Social Media | Nicht vorhanden. | Weglassen, ausser gewünscht. |
-| 10 | Datenschutz | Text sagt „keine Cookies, kein Tracking“. Neu kommen Vercel (Hosting) und je nach Wahl Resend/Formspree (Formular) dazu. | Datenschutz um Hosting- und Formular-Auftragsbearbeiter ergänzen (revDSG). Text zur Freigabe vorlegen. |
+| 10 | Datenschutz | Text sagt „keine Cookies, kein Tracking“. Neu kommen Vercel (Hosting) und je nach Wahl Resend/Formspree (Formular) dazu. | **Erledigt (2026-10-09):** Vercel, Resend, USA-Übermittlung, Rechtsgrundlage, Rate-Limit-IP und Schriften ergänzt. Kein Cookie-Banner nötig. |
 | 11 | Sprache/Tonalität | Live-Seite mischt „ich“ (Preise) und „wir“ (Datenschutz), Kontakt duzt („lass uns reden“), Preise siezen („Ihr Auftritt“). | Wortlaut vorerst 1:1 übernehmen. Später vereinheitlichen? |
 | 12 | Footer-Copyright | „© 2026 nano web & print design“ vs. Impressum „© 2026 nano design“. | Einheitlich „nano web & print design“? |
 

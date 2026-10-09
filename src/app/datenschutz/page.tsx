@@ -30,7 +30,9 @@ export default function Datenschutz() {
         <h2>datenerfassung auf dieser website</h2>
         <p>
           Diese Website verwendet keine Cookies, kein Web-Analytics-Tool und
-          kein Tracking.
+          kein Tracking. Schriften und Bilder werden direkt von dieser Website
+          ausgeliefert, es werden keine Daten an Google oder andere
+          Drittanbieter übertragen.
         </p>
       </section>
       <section>
@@ -42,7 +44,11 @@ export default function Datenschutz() {
           bearbeitet, damit die Website sicher und stabil ausgeliefert werden
           kann. Vercel kann diese Daten in den USA bearbeiten. Die Übermittlung
           stützt sich auf geeignete Garantien (Swiss-U.S. Data Privacy Framework
-          bzw. Standardvertragsklauseln).
+          bzw. Standardvertragsklauseln). Die Bearbeitung beruht auf meinem
+          berechtigten Interesse an einem sicheren und stabilen Betrieb der
+          Website (Art. 6 Abs. 1 lit. f DSGVO, soweit anwendbar). Die
+          Verbindung zwischen deinem Browser und der Website ist per TLS
+          (HTTPS) verschlüsselt.
         </p>
       </section>
       <section>
@@ -52,7 +58,13 @@ export default function Datenschutz() {
           (Name, E-Mail-Adresse, optional Telefonnummer, Nachricht)
           ausschliesslich zur Bearbeitung deiner Anfrage verwendet. Für die
           Zustellung der Nachricht an mich nutze ich den E-Mail-Dienst Resend
-          (Resend Inc., USA) als Auftragsbearbeiter. Die Daten werden nicht an
+          (Resend Inc., USA) als Auftragsbearbeiter. Resend kann diese Daten in
+          den USA bearbeiten. Die Übermittlung stützt sich auf geeignete
+          Garantien (Swiss-U.S. Data Privacy Framework bzw.
+          Standardvertragsklauseln). Zum Schutz vor Missbrauch wird beim
+          Absenden deine IP-Adresse kurzzeitig zwischengespeichert, um zu viele
+          Anfragen in kurzer Zeit zu begrenzen. Sie wird nicht dauerhaft
+          gespeichert. Die Daten werden nicht an
           weitere Dritte weitergegeben und nach Abschluss der Kommunikation
           gelöscht, sofern keine gesetzliche Aufbewahrungspflicht besteht.
           Rechtsgrundlage ist deine Einwilligung gemäss Art. 6 Abs. 1 lit. a
