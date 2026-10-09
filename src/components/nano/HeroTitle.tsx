@@ -30,7 +30,6 @@ const SHARED: TechTextProps = {
   lineStyle: "dashed",
   selection: true,
   labels: true,
-  sweep: true,
 };
 
 /**
@@ -46,16 +45,22 @@ export function HeroTitle() {
   );
   const [Tech, setTech] = useState<ComponentType<TechTextProps> | null>(null);
   const [ready, setReady] = useState(0);
+  // only one selection at a time: the sweep takes turns between the two words and pauses
+  // while the pointer is on the heading
+  const [turn, setTurn] = useState(0);
+  const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
     void import("./TechText").then((m) => setTech(() => m.default));
   }, []);
 
-  const overlay = (props: TechTextProps) =>
+  const overlay = (index: number, props: TechTextProps) =>
     Tech && (
       <Tech
         {...SHARED}
         {...props}
+        sweep={!hovering && turn === index}
+        onSweepPass={() => setTurn(1 - index)}
         className={s.heroTech}
         // dragging letters would fight scrolling on touch screens
         draggable={finePointer}
@@ -64,14 +69,19 @@ export function HeroTitle() {
     );
 
   return (
-    <h1 className={`${s.display} ${s.heroTitle}`} data-tech={ready >= 2 || undefined}>
+    <h1
+      className={`${s.display} ${s.heroTitle}`}
+      data-tech={ready >= 2 || undefined}
+      onPointerEnter={() => setHovering(true)}
+      onPointerLeave={() => setHovering(false)}
+    >
       <span className={s.heroWord}>
         nano
-        {overlay({ text: "nano", fontWeight: 900, letterSpacing: -0.04, color: "#ffffff" })}
+        {overlay(0, { text: "nano", fontWeight: 900, letterSpacing: -0.04, color: "#ffffff" })}
       </span>{" "}
       <span className={`${s.heroWord} ${s.heroTitleLight}`}>
         design.
-        {overlay({
+        {overlay(1, {
           text: "design.",
           fontWeight: 300,
           fontStyle: "italic",

@@ -8,6 +8,8 @@
  * - fontSize 0 reads the font size from CSS, so the overlay follows the responsive heading
  * - decorative renders aria-hidden (the real heading text stays in the DOM)
  * - onReady fires once the word has been drawn with the real (loaded) font
+ * - every sweep (re)starts at the left edge; onSweepPass fires after one left-to-right pass,
+ *   so a parent can hand the sweep from word to word
  * - the root is a <span> so it can sit inside an <h1>
  */
 
@@ -55,11 +57,12 @@ export interface TechTextProps {
   inset?: number;
   decorative?: boolean;
   onReady?: () => void;
+  onSweepPass?: () => void;
   className?: string;
   style?: CSSProperties;
 }
 
-type Settings = Required<Omit<TechTextProps, 'className' | 'style' | 'decorative' | 'onReady'>>;
+type Settings = Required<Omit<TechTextProps, 'className' | 'style' | 'decorative' | 'onReady' | 'onSweepPass'>>;
 
 const LABEL_FONT = '10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
 const FALLOFF_STEPS = 8;
@@ -120,6 +123,7 @@ const TechText = ({
   inset = 0,
   decorative = false,
   onReady,
+  onSweepPass,
   className = '',
   style
 }: TechTextProps) => {
@@ -127,6 +131,7 @@ const TechText = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const settingsRef = useRef<Settings | null>(null);
   const onReadyRef = useRef<(() => void) | undefined>(undefined);
+  const onSweepPassRef = useRef<(() => void) | undefined>(undefined);
   const wakeRef = useRef<() => void>(() => {});
 
   useEffect(() => {
@@ -156,6 +161,7 @@ const TechText = ({
       inset
     };
     onReadyRef.current = onReady;
+    onSweepPassRef.current = onSweepPass;
     wakeRef.current();
   });
 
@@ -184,6 +190,8 @@ const TechText = ({
     let clock = 0;
     let pulse = 0;
     let placed = false;
+    let wasSweeping = false;
+    let passReported = false;
     let dragging = -1;
     const pointer = { x: 0, y: 0, inside: false };
     const grab = { x: 0, y: 0 };
@@ -566,7 +574,17 @@ const TechText = ({
       const view = ensureLayout(s);
 
       const sweeping = s.sweep && !reducedMotion && !pointer.inside && dragging < 0;
+      // nano: restart at the left edge and report one completed left-to-right pass
+      if (sweeping && !wasSweeping) {
+        clock = 0;
+        passReported = false;
+      }
+      wasSweeping = sweeping;
       if (sweeping) clock += dt * s.speed;
+      if (sweeping && !passReported && clock * 0.45 >= Math.PI) {
+        passReported = true;
+        onSweepPassRef.current?.();
+      }
       pulse += dt;
       let targetX = pointer.x;
       let targetY = pointer.y;
