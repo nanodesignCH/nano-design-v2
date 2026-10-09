@@ -887,6 +887,7 @@
   position: absolute;
   font-size: 144px;
   line-height: 0.9;
+  white-space: nowrap;
   color: rgb(255 255 255 / 0.12);
 }
 

@@ -353,13 +353,13 @@ export function NanoPage() {
 
           <div className={s.nnInfo}>
             <p className={`${s.display} ${s.ghost} ${s.ghostOur}`} aria-hidden>
-              web
+              webdesign
             </p>
             <p className={`${s.display} ${s.ghost} ${s.ghostVision} ${s.px}`} style={{ "--k": -0.04 } as Vars} aria-hidden>
-              print
+              branding
             </p>
             <p className={`${s.display} ${s.ghost} ${s.ghostFor} ${s.px}`} style={{ "--k": 0.01 } as Vars} aria-hidden>
-              digital
+              ai design
             </p>
 
             <div className={`${s.nnBlock} ${s.nnBlock1} ${s.px}`} style={{ "--k": 0.0253 } as Vars}>
