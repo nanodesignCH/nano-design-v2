@@ -32,6 +32,8 @@ const JSON_LD = {
   name: "Nano Design",
   alternateName: "nano web & print design",
   url: "https://nano-design.ch",
+  description:
+    "Webdesign, Logodesign, Print Design und Online-Shops von Joël Gex aus Orpund bei Biel. Websites mit WordPress oder Next.js, Shops mit Shopify oder WooCommerce, für Kundinnen und Kunden in der ganzen Schweiz.",
   image: "https://nano-design.ch/opengraph-image",
   logo: "https://nano-design.ch/icon.svg",
   email: EMAIL,
@@ -44,14 +46,10 @@ const JSON_LD = {
     addressRegion: "BE",
     addressCountry: "CH",
   },
-  areaServed: [
-    { "@type": "City", name: "Biel/Bienne" },
-    { "@type": "AdministrativeArea", name: "Kanton Bern" },
-    { "@type": "Country", name: "Schweiz" },
-  ],
+  areaServed: { "@type": "Country", name: "Schweiz" },
   currenciesAccepted: "CHF",
   priceRange: "ab CHF 250.–",
-  knowsAbout: ["Webdesign", "Logodesign", "Print Design", "Online-Shops", "Content Creation", "AI Design"],
+  knowsAbout: ["Webdesign", "Logodesign", "Print Design", "Online-Shops", "Content Creation", "AI Design", "WordPress", "Next.js", "Shopify", "WooCommerce"],
   // prices from the "preise" section below
   makesOffer: [
     ["Website", 690],
@@ -61,6 +59,44 @@ const JSON_LD = {
     itemOffered: { "@type": "Service", name },
     priceSpecification: { "@type": "PriceSpecification", minPrice: price, priceCurrency: "CHF" },
   })),
+};
+
+/* FAQ (wording: content/nano/seo-drafts.md); also emitted as FAQPage schema */
+const FAQ: [string, string][] = [
+  [
+    "Was kostet eine Website?",
+    "Ab CHF 690.– erhältst du eine kleine Infoseite. Grössere Projekte mit mehr Seiten, Funktionen wie Buchungen oder Mehrsprachigkeit sind preislich nach oben offen und werden nach Aufwand kalkuliert. Nach einem kurzen Gespräch erhältst du ein transparentes Angebot ohne versteckte Kosten.",
+  ],
+  [
+    "Was kostet ein Logo?",
+    "Logos gibt es ab CHF 250.–. Enthalten sind drei Entwürfe, zwei Korrekturrunden und alle Dateien für Web und Druck. Braucht es mehr Entwürfe oder Korrekturen, wird der Mehraufwand transparent verrechnet.",
+  ],
+  [
+    "Arbeitest du nur in der Region Biel?",
+    "Nein. Ich arbeite von Orpund bei Biel aus für Kundinnen und Kunden in der ganzen Schweiz. Besprechungen finden bevorzugt online statt, nach Absprache auch vor Ort.",
+  ],
+  [
+    "Kann ich meine Website später selbst bearbeiten?",
+    "Ja. Mit WordPress pflegst du Texte, Bilder und Termine selbst. Bei Websites mit Next.js übernehme ich Änderungen für dich. Welche Lösung passt, klären wir am Anfang.",
+  ],
+  [
+    "Übernimmst du auch Hosting und Domain?",
+    "Ja, auf Wunsch kümmere ich mich nach dem Launch um Webhosting, Domainverwaltung und technisches Monitoring. Die Kosten dafür erhältst du mit der Offerte. Hast du einen Wunsch-Hoster, sag es mir. Gut zu wissen: Nicht jedes Hosting lässt alle technischen Möglichkeiten offen – günstige Angebote unterstützen zum Beispiel oft kein Node.js oder serverseitiges Rendering, wie es moderne Next.js-Websites brauchen.",
+  ],
+  [
+    "Wird meine Website bei Google gefunden?",
+    "Jede Website wird technisch sauber für Suchmaschinen aufgebaut: schnelle Ladezeiten, klare Struktur, Seitentitel und strukturierte Daten. Das ist die Basis. Für bessere Platzierungen braucht es zusätzlich gute Inhalte, dabei unterstütze ich dich mit Content Creation.",
+  ],
+  [
+    "Was brauche ich, um zu starten?",
+    "Eine kurze Nachricht über das Kontaktformular reicht. Gemeinsam klären wir Ziel, Umfang und Budget. Logo, Texte und Bilder sind hilfreich, aber kein Muss – das kann ich auch für dich erstellen.",
+  ],
+];
+
+const FAQ_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
 };
 
 /* ───────────── Building blocks ───────────── */
@@ -80,7 +116,8 @@ function Eyebrow({ children, className = "" }: { children: string; className?: s
 
 /* ───────────── Leistungen: 6 services in 3 sticky panels ───────────── */
 
-type Service = { nr: string; title: string; text: string };
+// text = original lead, more = SEO detail (content/nano/seo-drafts.md)
+type Service = { nr: string; title: string; text: string; more: string };
 
 type Panel = {
   bg: string;
@@ -111,11 +148,15 @@ const PANELS: Panel[] = [
         nr: "#01",
         title: "web design",
         text: "Individuelle Websites mit kurzen Ladezeiten – überzeugend, konversionsstark und massgeschneidert für jede Branche.",
+        more:
+          "Je nach Bedarf mit WordPress, damit du Inhalte selbst pflegen kannst, oder mit Next.js für maximale Geschwindigkeit und individuelle Animationen. Jede Seite ist für Smartphone, Tablet und Desktop optimiert und für Suchmaschinen sauber aufgebaut – von der Praxis bis zum Bauunternehmen.",
       },
       {
         nr: "#04",
         title: "online shops",
         text: "WooCommerce und Shopify Lösungen. Shops, die verkaufen – nicht nur aussehen.",
+        more:
+          "Vom kleinen Sortiment bis zum Shop für den internationalen Verkauf – wie der englischsprachige Shopify-Store von wigglepaws. Zahlungen wie TWINT und Kreditkarte binde ich über Stripe oder Payrexx ein. Produkte und Versand richte ich so ein, dass du den Shop im Alltag selbst führen kannst.",
       },
     ],
   },
@@ -134,11 +175,15 @@ const PANELS: Panel[] = [
         nr: "#02",
         title: "logo design",
         text: "Visuelle Identitäten mit Haltung. Logos und Corporate Design, die im Gedächtnis bleiben.",
+        more:
+          "Du erhältst drei Entwürfe, zwei Korrekturrunden und alle Dateien für Web und Druck.",
       },
       {
         nr: "#03",
         title: "print design",
         text: "Flyer, Visitenkarten, Plakate – gedruckte Materialien mit klarer, wirkungsvoller Gestaltung.",
+        more:
+          "Abgestimmt auf deine Website und dein Logo, damit dein Auftritt online und auf Papier wie aus einem Guss wirkt. Gedruckt wird ausschliesslich im Digitaldruck – ideal für kleine und mittlere Auflagen.",
       },
     ],
   },
@@ -157,11 +202,15 @@ const PANELS: Panel[] = [
         nr: "#05",
         title: "content creation",
         text: "Texte, die wirken. Sichtbarkeit, die bleibt. Gefunden werden, wo es zählt.",
+        more:
+          "Ich schreibe Website-Texte, die deine Kundschaft anspricht und die Suchmaschinen und KI-Assistenten verstehen – mit sauberer Struktur, passenden Suchbegriffen und strukturierten Daten im Hintergrund.",
       },
       {
         nr: "#06",
         title: "ai design",
         text: "Visuelle Inhalte der neusten Art. KI-generierte Bilder und Videos für Ads, Social Media und digitale Kommunikation.",
+        more:
+          "Ideal, wenn kein Fotoshooting möglich ist oder schnell viele Varianten gebraucht werden – etwa für Kampagnen auf Instagram oder Facebook. Jedes Motiv wird nachbearbeitet und an deinen Auftritt angepasst.",
       },
     ],
   },
@@ -173,6 +222,7 @@ function ServiceItem({ sv }: { sv: Service }) {
       <p className={s.eyebrowDark}>{sv.nr}</p>
       <h3 className={`${s.display} ${s.svcItemTitle}`}>{sv.title}</h3>
       <p className={`${s.text} ${s.svcItemText}`}>{sv.text}</p>
+      <p className={`${s.text} ${s.svcItemMore}`}>{sv.more}</p>
     </div>
   );
 }
@@ -256,6 +306,7 @@ export function NanoPage() {
       </a>
       <ScrollRuntime />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_LD) }} />
 
       <div className={s.intro} aria-hidden>
         <div className={s.introTop}>
@@ -415,12 +466,36 @@ export function NanoPage() {
           </div>
         </section>
 
-        <Divisor h="60px" hm="20px" l="var(--color-ink)" r="var(--color-paper)" kr={-0.01} />
+        <Divisor h="60px" hm="20px" l="var(--color-paper-warm)" r="var(--color-paper)" kr={-0.01} />
+
+        {/* Fragen: native <details>, answers stay in the HTML for crawlers */}
+        <section id="fragen" className={s.faq} aria-labelledby="fragen-title">
+          <div className={s.faqHead}>
+            <Eyebrow className={s.eyebrowOnLight}>05 — fragen</Eyebrow>
+            <h2 id="fragen-title" className={`${s.display} ${s.sectionTitle}`}>
+              gut zu
+              <span className={s.titleLight}>wissen.</span>
+            </h2>
+          </div>
+          <div className={s.faqList}>
+            {FAQ.map(([q, a]) => (
+              <details key={q} className={s.faqItem}>
+                <summary className={s.faqQ}>{q}</summary>
+                <p className={`${s.text} ${s.faqA}`}>{a}</p>
+              </details>
+            ))}
+            <a href="#kontakt" className={`${s.button} ${s.buttonDark} ${s.faqCta}`}>
+              noch eine frage? schreib mir →
+            </a>
+          </div>
+        </section>
+
+        <Divisor h="60px" hm="20px" l="var(--color-ink)" r="var(--color-paper-warm)" kr={-0.01} />
 
         {/* Kontakt */}
         <section id="kontakt" className={s.contact} aria-labelledby="kontakt-title">
           <div className={s.contactHead}>
-            <Eyebrow>05 — kontakt</Eyebrow>
+            <Eyebrow>06 — kontakt</Eyebrow>
             <h2 id="kontakt-title" className={`${s.display} ${s.sectionTitle}`}>
               lass uns
               <span className={s.titleLight}>reden.</span>

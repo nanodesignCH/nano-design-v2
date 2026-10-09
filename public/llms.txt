@@ -1,0 +1,32 @@
+# nano design
+
+> nano web & print design von Joël Gex, Orpund bei Biel. Webdesign, Logodesign, Print Design, Online-Shops, Content Creation und AI Design für Kundinnen und Kunden in der ganzen Schweiz.
+
+## Leistungen
+
+- Web Design: individuelle Websites mit kurzen Ladezeiten, umgesetzt mit WordPress oder Next.js. Kleine Infoseite ab CHF 690.–, grössere Projekte nach Aufwand.
+- Online Shops: Shopify und WooCommerce, Zahlungen wie TWINT über Stripe oder Payrexx. Preis auf Anfrage.
+- Logo Design: Logos und Corporate Design. Ab CHF 250.– inkl. drei Entwürfen und zwei Korrekturrunden.
+- Print Design: Flyer, Visitenkarten, Plakate, gedruckt im Digitaldruck.
+- Content Creation: Texte und Sichtbarkeit.
+- AI Design: KI-generierte Bilder und Videos für Ads, Social Media und digitale Kommunikation.
+- Auf Wunsch Webhosting, Domainverwaltung und technisches Monitoring nach dem Launch.
+
+## Ausgewählte Projekte
+
+- [büreverein](https://buereverein.ch/): Website für einen Verein in Büren an der Aare (WordPress)
+- [hundephysio seeland](https://www.hundephysio-seeland.ch/): Website für eine Hundephysiotherapie-Praxis
+- [asevatec gmbh](https://asevatec.ch/): Website für Arbeitssicherheit und Höhenarbeit (WordPress)
+- [coiffure hanny](https://coiffure-hanny.ch/): Relaunch für einen Coiffeursalon in Moosseedorf (WordPress)
+- [gesundheitspraxis megaro](https://www.gesundheitspraxis-megaro.ch/): Website für eine Gesundheitspraxis in Grenchen (WordPress)
+- [atelier furer](https://www.atelier-furer.ch/): Infoseite für ein Lederhandwerk-Atelier (WordPress)
+- [a. hirt bau ag](https://www.ahirt-bau.ch/): Relaunch für ein Bauunternehmen in Tüscherz-Alfermée (WordPress)
+- hirter finance & accounting: Logo für ein Startup in Buchhaltung und Finanzen
+- wigglepaws online store: englischsprachiger Shopify-Shop für Haustierbedarf
+
+## Kontakt
+
+- E-Mail: info@nano-design.ch
+- Adresse: Hauptstrasse 91, 2552 Orpund, Schweiz
+- Website: https://nano-design.ch
+- [Impressum](https://nano-design.ch/impressum) · [Datenschutz](https://nano-design.ch/datenschutz)

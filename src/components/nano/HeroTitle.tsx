@@ -89,6 +89,8 @@ export function HeroTitle() {
           color: "rgba(255, 255, 255, 0.88)",
         })}
       </span>
+      {/* search engines / AI only: names service + reach without touching the visual title */}
+      <span className="sr-only"> – Webdesign, Logodesign und Print Design aus der Schweiz</span>
     </h1>
   );
 }

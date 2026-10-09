@@ -16,10 +16,10 @@ const barlowItalic = Barlow({
   subsets: ["latin"],
 });
 
-// search snippet for Swiss queries ("webdesign biel", "logodesign seeland"): service + place first, brand last
-const title = "Webdesign & Logodesign in Orpund bei Biel | nano design";
+// search snippet: service first, origin ("aus", not "in": clients come from all of Switzerland), brand last
+const title = "Webdesign & Logodesign aus Orpund bei Biel | nano design";
 const description =
-  "Webdesign, Logodesign, Print Design und Online-Shops aus Orpund bei Biel. Websites ab CHF 690.–, Logos ab CHF 250.–. Jetzt unverbindlich anfragen.";
+  "Webdesign, Logodesign, Print Design und Online-Shops aus Orpund bei Biel, für die ganze Schweiz. Websites ab CHF 690.–, Logos ab CHF 250.–. Jetzt anfragen.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nano-design.ch"),

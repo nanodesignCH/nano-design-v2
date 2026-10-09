@@ -617,7 +617,7 @@
 }
 
 .svcList {
-  width: 260px;
+  width: clamp(260px, calc(50vw - 290px), 380px);
 }
 
 .svcListRight {
@@ -637,6 +637,14 @@
   margin-top: 12px;
   font-size: 17px;
   line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.svcItemMore {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgb(8 8 8 / 0.7);
   text-wrap: pretty;
 }
 
@@ -1011,6 +1019,98 @@
   color: rgb(8 8 8 / 0.75);
 }
 
+/* ───────────── Fragen ───────────── */
+
+.faq {
+  position: relative;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 80px;
+  align-items: start;
+  padding: 140px 60px 160px;
+  background: var(--color-paper-warm);
+  color: var(--color-ink);
+  interpolate-size: allow-keywords;
+}
+
+.faqHead {
+  position: sticky;
+  top: 120px;
+}
+
+.faqItem {
+  border-top: 1px solid rgb(8 8 8 / 0.12);
+}
+
+.faqItem:last-of-type {
+  border-bottom: 1px solid rgb(8 8 8 / 0.12);
+}
+
+.faqQ {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 0;
+  font-family: var(--font-barlow-family), "Helvetica Neue", Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faqQ::-webkit-details-marker {
+  display: none;
+}
+
+.faqQ::after {
+  content: "+";
+  flex: none;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 0.8;
+  color: var(--color-ochre);
+}
+
+.faqItem[open] .faqQ::after {
+  rotate: 45deg;
+}
+
+.faqA {
+  max-width: 60ch;
+  padding-bottom: 28px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgb(8 8 8 / 0.75);
+}
+
+.faqCta {
+  margin-top: 48px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .faqQ::after {
+    transition: rotate 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* progressive: browsers without ::details-content simply snap open */
+  .faqItem::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+      block-size 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      content-visibility 0.4s allow-discrete;
+  }
+
+  .faqItem[open]::details-content {
+    block-size: auto;
+  }
+}
+
 /* ───────────── Kontakt ───────────── */
 
 .contact {
@@ -1240,6 +1340,14 @@
   .svcLists {
     top: auto;
     bottom: 60px;
+    /* both columns count toward the height, so the taller one sets the bottom edge */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .svcListRight {
+    position: relative;
   }
 
   .svcList {
@@ -1271,6 +1379,15 @@
   .contact {
     grid-template-columns: 1fr;
     gap: 60px;
+  }
+
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .faqHead {
+    position: static;
   }
 }
 
@@ -1514,6 +1631,25 @@
   .pricesFoot {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 90px 20px 100px;
+  }
+
+  .faqHead {
+    position: static;
+  }
+
+  .faqQ {
+    padding: 22px 0;
+    font-size: 21px;
+  }
+
+  .faqA {
+    font-size: 16px;
   }
 
   .contact {
