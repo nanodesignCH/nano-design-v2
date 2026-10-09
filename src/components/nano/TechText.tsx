@@ -555,6 +555,9 @@ const TechText = ({
 
       if (!s.labels) return;
       ctx.font = LABEL_FONT;
+      // nano: an on-page canvas inherits the heading's CSS letter-spacing (-0.04em / -0.01em at 180px),
+      // which squeezed the label digits into each other; labels are always set unspaced
+      if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'bottom';
       ctx.fillStyle = rgba(s.accentColor, 0.62 * a);

@@ -5,6 +5,9 @@
   height: 100%;
   touch-action: pan-y;
   user-select: none;
+  /* the canvas inherits text styles from here; keep the overlaid heading's tracking/style out */
+  letter-spacing: normal;
+  font-style: normal;
 }
 
 .tech-text-canvas {
