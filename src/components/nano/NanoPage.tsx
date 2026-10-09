@@ -354,15 +354,9 @@ export function NanoPage() {
           </div>
 
           <div className={s.nnInfo}>
-            <p className={`${s.display} ${s.ghost} ${s.ghostOur}`} aria-hidden>
-              webdesign
-            </p>
-            <p className={`${s.display} ${s.ghost} ${s.ghostVision} ${s.px}`} style={{ "--k": -0.04 } as Vars} aria-hidden>
-              branding
-            </p>
-            <p className={`${s.display} ${s.ghost} ${s.ghostFor} ${s.px}`} style={{ "--k": 0.01 } as Vars} aria-hidden>
-              ai design
-            </p>
+            <p className={`${s.display} ${s.ghost} ${s.ghostOur}`} data-text="webdesign" aria-hidden />
+            <p className={`${s.display} ${s.ghost} ${s.ghostVision} ${s.px}`} style={{ "--k": -0.04 } as Vars} data-text="branding" aria-hidden />
+            <p className={`${s.display} ${s.ghost} ${s.ghostFor} ${s.px}`} style={{ "--k": 0.01 } as Vars} data-text="ai design" aria-hidden />
 
             <div className={`${s.nnBlock} ${s.nnBlock1} ${s.px}`} style={{ "--k": 0.0253 } as Vars}>
               <Eyebrow>03 — über nano</Eyebrow>

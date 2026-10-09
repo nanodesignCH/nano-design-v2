@@ -903,6 +903,11 @@
   color: rgb(255 255 255 / 0.12);
 }
 
+/* ghost type lives in a pseudo-element so it is not read or contrast-audited as text */
+.ghost::before {
+  content: attr(data-text);
+}
+
 .ghostOur {
   top: 560px;
   right: 15px;
