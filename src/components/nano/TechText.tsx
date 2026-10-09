@@ -8,8 +8,9 @@
  * - fontSize 0 reads the font size from CSS, so the overlay follows the responsive heading
  * - decorative renders aria-hidden (the real heading text stays in the DOM)
  * - onReady fires once the word has been drawn with the real (loaded) font
- * - every sweep (re)starts at the left edge; onSweepPass fires after one left-to-right pass,
- *   so a parent can hand the sweep from word to word
+ * - the sweep hops from letter to letter with random dwell times (DWELL_STEPS) instead of a
+ *   continuous glide; every sweep (re)starts at the first letter and onSweepPass fires after
+ *   the last one, so a parent can hand the sweep from word to word
  * - the root is a <span> so it can sit inside an <h1>
  */
 
@@ -68,6 +69,10 @@ const LABEL_FONT = '10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospac
 const FALLOFF_STEPS = 8;
 const SPRING = 320;
 const DAMPING = 22;
+// nano: the sweep hops letter to letter; one pass over a word takes ~8 s on average (20% shorter
+// than the original continuous sweep) and each letter dwells for one of four random lengths
+const SWEEP_PASS = 8;
+const DWELL_STEPS = [0.6, 0.85, 1.15, 1.4];
 
 const approach = (current: number, target: number, dt: number, seconds: number) =>
   current + (target - current) * (1 - Math.exp(-dt / seconds));
@@ -187,7 +192,8 @@ const TechText = ({
     let word: Word | null = null;
     let glyphs: Glyph[] = [];
     let presence = 0;
-    let clock = 0;
+    let step = 0;
+    let dwell = 0;
     let pulse = 0;
     let placed = false;
     let wasSweeping = false;
@@ -577,23 +583,34 @@ const TechText = ({
       const view = ensureLayout(s);
 
       const sweeping = s.sweep && !reducedMotion && !pointer.inside && dragging < 0;
-      // nano: restart at the left edge and report one completed left-to-right pass
+      // nano: hop letter to letter, dwelling a random one of four lengths on each
+      const pickDwell = () =>
+        (SWEEP_PASS / Math.max(glyphs.length, 1)) * DWELL_STEPS[Math.floor(Math.random() * DWELL_STEPS.length)];
       if (sweeping && !wasSweeping) {
-        clock = 0;
+        step = 0;
+        dwell = pickDwell();
         passReported = false;
       }
       wasSweeping = sweeping;
-      if (sweeping) clock += dt * s.speed;
-      if (sweeping && !passReported && clock * 0.45 >= Math.PI) {
-        passReported = true;
-        onSweepPassRef.current?.();
+      if (sweeping && glyphs.length) {
+        dwell -= dt;
+        if (dwell <= 0) {
+          if (step < glyphs.length - 1) {
+            step += 1;
+            dwell = pickDwell();
+          } else if (!passReported) {
+            passReported = true;
+            onSweepPassRef.current?.();
+          }
+        }
       }
       pulse += dt;
       let targetX = pointer.x;
       let targetY = pointer.y;
       if (sweeping) {
-        targetX = view.left + (view.right - view.left) * (0.5 - 0.5 * Math.cos(clock * 0.45));
-        targetY = view.top + (view.bottom - view.top) * (0.45 + 0.1 * Math.sin(clock * 0.8));
+        const glyph = glyphs[Math.min(step, glyphs.length - 1)];
+        targetX = glyph ? (glyph.box.x1 + glyph.box.x2) / 2 : view.left;
+        targetY = view.top + (view.bottom - view.top) * 0.45;
       }
       const active = pointer.inside || sweeping || dragging >= 0;
       if (active && !placed) {
@@ -601,7 +618,7 @@ const TechText = ({
         lens.y = targetY;
       }
       if (active) {
-        const lag = pointer.inside ? 0.05 : 0.22;
+        const lag = pointer.inside ? 0.05 : 0.12;
         lens.x = approach(lens.x, targetX, dt, lag);
         lens.y = approach(lens.y, targetY, dt, lag);
       }
