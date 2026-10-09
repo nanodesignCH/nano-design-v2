@@ -261,7 +261,7 @@ export function NanoPage() {
           <p className={`${s.display} ${s.introTitle}`}>nano design</p>
         </div>
         <div className={s.introBottom}>
-          <p className={`${s.text} ${s.introSub}`}>web · print · digital</p>
+          <p className={`${s.text} ${s.introSub}`}>webdesign · branding · ai design</p>
         </div>
       </div>
 
@@ -271,15 +271,12 @@ export function NanoPage() {
         {/* Home */}
         <section id="home" className={s.hero}>
           <h1 className={`${s.display} ${s.heroTitle}`}>
-            <span>nano</span>
-            <span className={s.heroTitleLight}>design.</span>
+            nano <span className={s.heroTitleLight}>design.</span>
           </h1>
-          <div className={s.heroFoot}>
-            <p className={`${s.text} ${s.tagline}`}>web · print · digital</p>
-            <a href="#kontakt" className={`${s.button} ${s.heroCta}`}>
-              jetzt anfragen →
-            </a>
-          </div>
+          <p className={`${s.text} ${s.tagline}`}>webdesign · branding · ai design</p>
+          <a href="#kontakt" className={`${s.button} ${s.heroCta}`}>
+            jetzt anfragen →
+          </a>
           <p className={s.scrollHint} aria-hidden>
             scroll
           </p>

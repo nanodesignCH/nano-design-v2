@@ -39,7 +39,7 @@ export default async function Image() {
           >
             nd
           </div>
-          <div style={{ fontSize: 22, letterSpacing: "0.3em", color: "#c9a84c" }}>web · print · digital</div>
+          <div style={{ fontSize: 22, letterSpacing: "0.3em", color: "#c9a84c" }}>webdesign · branding · ai design</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", fontSize: 196, lineHeight: 0.88, letterSpacing: "-0.04em" }}>
           <span>nano</span>
