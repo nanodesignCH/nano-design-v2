@@ -1097,20 +1097,24 @@
   align-items: center;
   gap: 24px;
   padding: 56px 60px;
-  background: var(--color-ink);
-  border-top: 1px solid rgb(255 255 255 / 0.06);
+  background: var(--color-ochre-muted);
+  color: var(--color-ink); /* ink on ochre-muted ≈ 6:1 */
 }
 
-/* same mark as the fixed header logo */
+/* header mark inverted for the ochre ground: ink frame, ochre letters */
 .footLogo {
   justify-self: start;
   display: flex;
   padding: 2px;
-  background: #fff;
+  background: var(--color-ink);
+}
+
+.footLogo .logoMark {
+  color: var(--color-ochre-muted);
 }
 
 .footLogo:hover .logoMark {
-  color: var(--color-ochre);
+  color: #fff;
 }
 
 .footMail {
@@ -1121,7 +1125,7 @@
 }
 
 .footMail:hover {
-  color: var(--color-ochre);
+  color: #fff;
 }
 
 .footLegal {
@@ -1131,7 +1135,6 @@
   gap: 24px;
   font-size: 13px;
   letter-spacing: 0.06em;
-  color: rgb(255 255 255 / 0.55);
 }
 
 .footLink {
@@ -1140,6 +1143,10 @@
 
 .footLink:hover {
   color: #fff;
+}
+
+.page .footer :focus-visible {
+  outline-color: var(--color-ink);
 }
 
 /* ───────────── Parallax (page-global like the clone source) ───────────── */
