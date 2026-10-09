@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import projectsData from "../../../content/nano/projects.json";
 import { ContactForm } from "./ContactForm";
 import { Header } from "./Header";
+import { HeroTitle } from "./HeroTitle";
 import { Reveal } from "./Reveal";
 import { ScrollRuntime } from "./ScrollRuntime";
 import s from "./nano.module.css";
@@ -270,9 +271,7 @@ export function NanoPage() {
       <main id="main" className={s.main}>
         {/* Home */}
         <section id="home" className={s.hero}>
-          <h1 className={`${s.display} ${s.heroTitle}`}>
-            nano <span className={s.heroTitleLight}>design.</span>
-          </h1>
+          <HeroTitle />
           <p className={`${s.text} ${s.tagline}`}>webdesign · branding · ai design</p>
           <a href="#kontakt" className={`${s.button} ${s.heroCta}`}>
             jetzt anfragen →

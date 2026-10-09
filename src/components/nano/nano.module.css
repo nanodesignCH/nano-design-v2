@@ -392,6 +392,25 @@
   padding-bottom: 0.08em;
 }
 
+/* each word is an anchor for its TechText overlay */
+.heroWord {
+  position: relative;
+  display: inline-block;
+}
+
+/* overlay reaches 0.3em past the word (inset prop) so italic overhang, frame and labels fit */
+.heroWord > .heroTech {
+  position: absolute;
+  inset: -0.3em;
+  width: auto;
+  height: auto;
+}
+
+/* both canvases show the real font: the DOM text steps back but stays for search and screen readers */
+.heroTitle[data-tech] .heroWord {
+  color: transparent;
+}
+
 .heroTitleLight {
   font-family: var(--font-barlow-italic), var(--font-barlow-family), sans-serif;
   font-weight: 300;
