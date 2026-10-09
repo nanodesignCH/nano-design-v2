@@ -381,18 +381,6 @@
   padding: 100px 20px 120px;
   overflow: hidden;
   text-align: center;
-  /* own stacking context so the glow layer (z-index -1) sits above the background, below the content */
-  isolation: isolate;
-}
-
-/* GlowCursor layer: fills the hero behind the content, never takes clicks */
-.hero > .heroGlow {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  width: auto;
-  height: auto;
-  pointer-events: none;
 }
 
 .heroTitle {
