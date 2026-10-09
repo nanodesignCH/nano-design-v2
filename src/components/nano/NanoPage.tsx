@@ -267,7 +267,7 @@ export function NanoPage() {
 
       <Header />
 
-      <main id="main">
+      <main id="main" className={s.main}>
         {/* Home */}
         <section id="home" className={s.hero}>
           <h1 className={`${s.display} ${s.heroTitle}`}>
@@ -444,40 +444,23 @@ export function NanoPage() {
         </section>
       </main>
 
+      {/* reveal footer: sticks to the viewport bottom behind <main>, uncovered as the page ends */}
       <footer className={s.footer}>
-        <div className={s.footRow}>
-          <nav aria-label="Seiten" className={s.footNav}>
-            <p className={s.footLabel}>seiten</p>
-            {[
-              ["home", "#home"],
-              ["leistungen", "#leistungen"],
-              ["projekte", "#projekte"],
-              ["über nano", "#ueber-nano"],
-              ["preise", "#preise"],
-              ["kontakt", "#kontakt"],
-            ].map(([label, href]) => (
-              <a key={href} href={href} className={s.footLink}>
-                {label}
-              </a>
-            ))}
-          </nav>
-          <a className={`${s.text} ${s.footMail}`} href={`mailto:${EMAIL}`}>
-            {EMAIL}
+        <a href="#home" className={s.footLogo} aria-label="nd – nano design, nach oben">
+          <span className={s.logoMark}>nd</span>
+        </a>
+        <a className={`${s.text} ${s.footMail}`} href={`mailto:${EMAIL}`}>
+          {EMAIL}
+        </a>
+        <div className={s.footLegal}>
+          <p>© 2026 nano design</p>
+          <a href="/impressum" className={s.footLink}>
+            impressum
           </a>
-          <div className={s.footLegal}>
-            <p className={s.footLabel}>© 2026 nano web &amp; print design</p>
-            <a href="/impressum" className={s.footLink}>
-              impressum
-            </a>
-            <a href="/datenschutz" className={s.footLink}>
-              datenschutz
-            </a>
-          </div>
+          <a href="/datenschutz" className={s.footLink}>
+            datenschutz
+          </a>
         </div>
-        <p className={`${s.display} ${s.footEst}`} data-text="web & print" aria-hidden />
-        <p className={`${s.display} ${s.footBrand}`} aria-hidden>
-          nano design
-        </p>
       </footer>
     </div>
   );
