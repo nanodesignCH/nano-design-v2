@@ -3,16 +3,16 @@ import { LegalPage, legalMetadata } from "@/components/nano/LegalPage";
 export const metadata = legalMetadata(
   "/impressum",
   "impressum – nano design",
-  "Impressum von Nano Design, Joël Gex, Hauptstrasse 91, 2552 Orpund.",
+  "Impressum von nano design: Joël Gex, Hauptstrasse 91, 2552 Orpund.",
 );
 
 export default function Impressum() {
   return (
     <LegalPage title="impressum">
       <section>
-        <h2>unternehmen</h2>
+        <h2>verantwortlich für den inhalt</h2>
         <p>
-          Nano Design
+          Joël Gex
           <br />
           Hauptstrasse 91
           <br />
@@ -20,6 +20,7 @@ export default function Impressum() {
           <br />
           Schweiz
         </p>
+        <p>„nano design“ ist die Bezeichnung, unter der ich meine Dienstleistungen anbiete.</p>
       </section>
       <section>
         <h2>kontakt</h2>
@@ -28,10 +29,6 @@ export default function Impressum() {
           <br />
           Web: nano-design.ch
         </p>
-      </section>
-      <section>
-        <h2>verantwortlich für den inhalt</h2>
-        <p>Joël Gex, Nano Design</p>
       </section>
       <section>
         <h2>haftungsausschluss</h2>
@@ -48,8 +45,7 @@ export default function Impressum() {
           Die von mir erstellten Inhalte und Werke auf dieser Website
           unterliegen dem schweizerischen Urheberrecht. Die Vervielfältigung,
           Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der
-          Grenzen des Urheberrechts brauchen die schriftliche Zustimmung von
-          Nano Design.
+          Grenzen des Urheberrechts brauchen meine schriftliche Zustimmung.
         </p>
       </section>
       <section>

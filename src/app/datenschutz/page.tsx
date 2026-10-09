@@ -3,16 +3,16 @@ import { LegalPage, legalMetadata } from "@/components/nano/LegalPage";
 export const metadata = legalMetadata(
   "/datenschutz",
   "datenschutz – nano design",
-  "Datenschutzerklärung von Nano Design gemäss Schweizer Datenschutzgesetz (DSG).",
+  "Datenschutzerklärung von nano design (Joël Gex) gemäss Schweizer Datenschutzgesetz (DSG).",
 );
 
 export default function Datenschutz() {
   return (
     <LegalPage title="datenschutz">
       <section>
-        <h2>verantwortliche stelle</h2>
+        <h2>verantwortlich</h2>
         <p>
-          Nano Design – Joël Gex, Hauptstrasse 91, 2552 Orpund
+          Joël Gex, Hauptstrasse 91, 2552 Orpund, Schweiz
           <br />
           E-Mail: <a href="mailto:info@nano-design.ch">info@nano-design.ch</a>
         </p>

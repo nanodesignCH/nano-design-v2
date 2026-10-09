@@ -4,32 +4,30 @@
 
 ## Impressum
 
-**unternehmen**
-Nano Design
+**verantwortlich für den inhalt**
+Joël Gex
 Hauptstrasse 91
 2552 Orpund
 Schweiz
+„nano design“ ist die Bezeichnung, unter der ich meine Dienstleistungen anbiete. *(2026-10-09: privat angeboten, keine Firma)*
 
 **kontakt**
 E-Mail: info@nano-design.ch
 Web: nano-design.ch
 
-**verantwortlich für den inhalt**
-Joël Gex, Nano Design
-
 **haftungsausschluss**
 Die Inhalte dieser Website habe ich mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehme ich jedoch keine Gewähr. Für eigene Inhalte auf diesen Seiten bin ich nach den allgemeinen Gesetzen verantwortlich.
 
 **urheberrecht**
-Die von mir erstellten Inhalte und Werke auf dieser Website unterliegen dem schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechts brauchen die schriftliche Zustimmung von Nano Design.
+Die von mir erstellten Inhalte und Werke auf dieser Website unterliegen dem schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechts brauchen meine schriftliche Zustimmung.
 
 **portfolio** *(neu)*
 Die Screenshots im Portfolio zeigen Websites, die ich für Kundinnen und Kunden umgesetzt habe. Die Rechte an Inhalten und Bildern der jeweiligen Websites liegen bei deren Betreiberinnen und Betreibern.
 
 ## Datenschutz
 
-**verantwortliche stelle**
-Nano Design – Joël Gex, Hauptstrasse 91, 2552 Orpund
+**verantwortlich**
+Joël Gex, Hauptstrasse 91, 2552 Orpund, Schweiz
 E-Mail: info@nano-design.ch
 
 **grundsatz**
