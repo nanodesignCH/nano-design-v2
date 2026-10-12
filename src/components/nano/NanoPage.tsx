@@ -141,8 +141,8 @@ const PANELS: Panel[] = [
     rk: -0.001665,
     tilt: "2deg",
     k: -0.03,
-    image: "/nano/projects/asevatec-desktop.png",
-    alt: "Startseite asevatec gmbh (Desktop)",
+    image: "/nano/buereverein_prtscr.webp",
+    alt: "Startseite büreverein (Desktop)",
     services: [
       {
         nr: "#01",
@@ -402,7 +402,7 @@ export function NanoPage() {
           </div>
 
           <div className={s.nnInfo}>
-            <p className={`${s.display} ${s.ghost} ${s.ghostOur}`} data-text="webdesign" aria-hidden />
+            <p className={`${s.display} ${s.ghost} ${s.ghostOur}`} data-text="web design" aria-hidden />
             <p className={`${s.display} ${s.ghost} ${s.ghostVision} ${s.px}`} style={{ "--k": -0.04 } as Vars} data-text="branding" aria-hidden />
             <p className={`${s.display} ${s.ghost} ${s.ghostFor} ${s.px}`} style={{ "--k": 0.01 } as Vars} data-text="ai design" aria-hidden />
 
@@ -492,44 +492,51 @@ export function NanoPage() {
 
         <Divisor h="60px" hm="20px" l="var(--color-ink)" r="var(--color-paper-warm)" kr={-0.01} />
 
-        {/* Kontakt */}
-        <section id="kontakt" className={s.contact} aria-labelledby="kontakt-title">
-          <div className={s.contactHead}>
-            <Eyebrow>06 — kontakt</Eyebrow>
-            <h2 id="kontakt-title" className={`${s.display} ${s.sectionTitle}`}>
-              lass uns
-              <span className={s.titleLight}>reden.</span>
-            </h2>
-            <p className={`${s.text} ${s.contactLead}`}>
-              Jetzt Kontakt aufnehmen – per Mail an{" "}
-              <a href={`mailto:${EMAIL}`} className={s.inlineLink}>
-                {EMAIL}
-              </a>{" "}
-              oder über das Kontaktformular.
-            </p>
-          </div>
-          <ContactForm />
-        </section>
       </main>
 
-      {/* reveal footer: sticks to the viewport bottom behind <main>, uncovered as the page ends */}
-      <footer className={s.footer}>
-        <a href="#home" className={s.footLogo} aria-label="nd – nano design, nach oben">
-          <span className={s.logoMark}>nd</span>
-        </a>
-        <a className={`${s.text} ${s.footMail}`} href={`mailto:${EMAIL}`}>
-          {EMAIL}
-        </a>
-        <div className={s.footLegal}>
-          <p>© 2026 nano design</p>
-          <a href="/impressum" className={s.footLink}>
-            impressum
-          </a>
-          <a href="/datenschutz" className={s.footLink}>
-            datenschutz
-          </a>
+      {/* contact + footer form one block that the page above (Fragen) slides off to reveal */}
+      <div className={s.revealEnd}>
+      {/* Kontakt */}
+      <section id="kontakt" className={s.contact} aria-labelledby="kontakt-title">
+        <div className={s.contactHead}>
+          <Eyebrow>06 — kontakt</Eyebrow>
+          <h2 id="kontakt-title" className={`${s.display} ${s.sectionTitle}`}>
+            lass uns
+            <span className={s.titleLight}>reden.</span>
+          </h2>
+          <p className={`${s.text} ${s.contactLead}`}>
+            Jetzt Kontakt aufnehmen – per Mail an{" "}
+            <a href={`mailto:${EMAIL}`} className={s.inlineLink}>
+              {EMAIL}
+            </a>{" "}
+            oder über das Kontaktformular.
+          </p>
         </div>
-      </footer>
+        <ContactForm />
+      </section>
+
+        <footer className={s.footer}>
+          <div className={s.footId}>
+            <a href="#home" className={s.footLogo} aria-label="nd – nano design, nach oben">
+              <span className={s.logoMark}>nd</span>
+            </a>
+            <a className={`${s.text} ${s.footMail}`} href={`mailto:${EMAIL}`}>
+              {EMAIL}
+            </a>
+          </div>
+          <div className={s.footLegal}>
+            <p>© 2026 nano design</p>
+            <a href="/impressum" className={s.footLink}>
+              impressum
+            </a>
+            <a href="/datenschutz" className={s.footLink}>
+              datenschutz
+            </a>
+          </div>
+        </footer>
+      </div>
+      {/* active-nav stand-in for #kontakt: the last viewport of the page, where the block ends up */}
+      <span className={s.spyEnd} data-spy="kontakt" aria-hidden />
     </div>
   );
 }

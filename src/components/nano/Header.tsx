@@ -20,12 +20,13 @@ function useActiveSection() {
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) if (e.isIntersecting) setActive(e.target.id);
+        for (const e of entries) if (e.isIntersecting) setActive((e.target as HTMLElement).dataset.spy ?? e.target.id);
       },
       { rootMargin: "-50% 0px -50% 0px" },
     );
     for (const { id } of LINKS) {
-      const el = document.getElementById(id);
+      // a [data-spy] stand-in replaces sections whose own rect is misleading (sticky contact block)
+      const el = document.querySelector(`[data-spy="${id}"]`) ?? document.getElementById(id);
       if (el) io.observe(el);
     }
     return () => io.disconnect();
